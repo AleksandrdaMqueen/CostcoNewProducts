@@ -1,0 +1,20 @@
+{
+  "method": "call",
+  "jsonrpc": "2.0",
+  "params": {
+    "args": [
+      {
+        "categ_id": "1",
+        "seller_ids": [[0, "False", {"delay": 3, "min_qty": 1, "name": 9871}]],
+        "lst_price": 119.98,
+        "name": "Nautica Men\u2019s Mixed Media Parka, Blue, XX-Large",
+        "type": "product",
+        "default_code": "Item #1639176"
+      }
+    ],
+    "method": "create",
+    "model": "product.product"
+  }
+}
+
+

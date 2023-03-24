@@ -1,0 +1,2346 @@
+
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+        Orders & Purchases
+    </title>
+
+
+    <script type="text/javascript">
+					var messages = {
+  "PDETAIL_ITEMS_ADDED_TO_CART2" : "Item(s) added to cart",
+  "PRESCRIPTION_DETAIL__Delivery_Shipped" : "???PRESCRIPTION_DETAIL__Delivery_Shipped???",
+  "ERR_INVALID_CONTACT_NAME" : "Please enter your contact name.",
+  "ERR_COSTCO_PAY_INVALID_EMAIL" : "Please enter a valid email address.",
+  "ERR_MYACCOUNT_ADDRESS_TYPE_SELECTION_INVALID" : "Please select an address type",
+  "COLECTION_VIEW_MORE" : "View More",
+  "SCHED_DELIV_PARTS_TXT" : "Includes the following complimentary items:",
+  "ACCOUNT_DETAIL_EDIT_PASSWORD" : "Edit Password ",
+  "RWD_MEMBERSHIP_NUMBER" : "Membership Number",
+  "EDD_EARLIEST_DELIVERY" : "Earliest Delivery",
+  "LISTS_QUANTITY" : "Quantity",
+  "SQUARE_TRADE_90_DAYS_RETURN" : "Specific items cannot be returned past 90 days. <a href=\"https://customerservice.costco.com/app/answers/detail/a_id/1191\">Costco Return Policy</a>",
+  "REASONKEY_DAMAGED_BOX_AND_ITEM" : "???REASONKEY_DAMAGED_BOX_AND_ITEM???",
+  "RWD_CA_STATE_LABEL" : "Province",
+  "ERR_INVALID_SHIPPING_METHOD_CART" : "There is an error with one or more items in your order and it cannot be purchased at this time. We apologize for the inconvenience. <a onclick='COSTCO.OrderItems.removeUnavailableItems(true);' href='javascript:void(0);' id='remove_oos_items' class='body-copy-link remove-unavailable-items'>Remove unavailable items</a>. Removing these item(s) may change your delivery fee.",
+  "MEMBERSHIP_VALIDATION_Expired_Renew_Only_Button_Text" : "No, Renew Only",
+  "MSG_EMAIL_RECEIVED" : "Information Received. Thank you!",
+  "JS_VALID_REMOTE" : "Please correct your entry in this field.",
+  "RETURN_QUANTITY_MANDATORY" : "Quantity is required.",
+  "SELF_ORDER_CANCEL_ITEM_REASON_OTH" : "Other",
+  "ERR_COBRANDED_CREDITCARD" : "We cannot accept this type of credit card for online auto-renewal at this time. Please visit a warehouse to enroll with this card or enter a different card.",
+  "ERR_FAMILY_MEMBER_EMAIL_ADDRESS_SEND_REQUEST" : "Please enter a valid family member email address.",
+  "LIVE_TICKETS_CANCEL_ORDER_MODAL_CANCEL_BUTTON" : "Cancel Order",
+  "ERR_INVALID_FNAME" : "Enter a valid first name.",
+  "ERR_COSTCO_PAY_INVALID_NAME_ON_CARD" : "Please enter a valid name.",
+  "RWD_ADDRESS_CHANGE_ADDRESS" : "Change Address",
+  "PREV_SLIDE" : "Previous Promo",
+  "JS_VALID_DATEISO" : "Please enter a valid date using the format \"YYYY-MM-DD\"",
+  "CMPP_CAROUSEL_NEXT" : "Next new products to CMPP",
+  "COSTCO_PAY_FOB_DISABLE_MODAL_TITLE" : "Disable Fob",
+  "ERR_COSTCO_PAY_INVALID_CARD_TYPE" : "At this time only Visa and Costco Co-Branded card is accepted.",
+  "ERR_REORDER_ITEM_NOT_ALLOWED" : "Item is out of stock or unavailable to reorder",
+  "DMC_TRY_AGAIN_DEPROVISION_MESSAGE" : "Your card cannot be removed at this time. Please try again later.",
+  "ERR_REQUIRED_PHARMACY_NAME" : "Please enter a pharmacy name.",
+  "LIVE_TICKETS_GIFT_MESSAGE_MODAL_EDIT_TITLE" : "Edit Gift Message",
+  "ERR_ENTER_UNIQUE_NICKNAME" : "Please enter a unique nickname for your address.",
+  "ERR_INVALID_CREDITCARD_SHORT" : "Please enter a valid credit card number.",
+  "MEMBERSHIP_UnverifiedRenewal_MaxAttemps" : "Sorry, you have exceeded the number of attempts allowed to renew online per session. To renew your membership, call 1-800-774-2678 or visit the membership counter at your local warehouse.",
+  "ERR_MYACCOUNT_ADDRESS_SELECTION_INVALID" : "Please select an address",
+  "ERR_REQUIRED_DOB" : "Date of Birth is required.",
+  "SELECT_DELIVERY_DATE_CALENDAR" : "Select Delivery Date",
+  "DELETE_PAY_METHOD_COFIRM_TITLE" : "Confirm payment method deletion",
+  "CHECKOUT_MEASUREMENT_GUIDELINE_ADD_TO_CART" : "I have confirmed the item dimensions and delivery access will be available to ensure the item is succesfully delivered. ",
+  "ZIPCODE_SELECTOR_CHANGE_ADDRESS_TYPE" : "Change Address Type",
+  "ERR_GROCERY_INVALID_ZIP" : "Enter a Valid ZIP Code",
+  "DMC_TRY_AGAIN_CVV_MESSAGE" : "One or more of the fields of information entered below is incorrect. Please try again.",
+  "ERR_INVALID_RELATIONSHIP" : "Select a Patient Relationship.",
+  "PRESCRIPTION_STATUS__Ordered" : "???PRESCRIPTION_STATUS__Ordered???",
+  "RENEW_UPGRADE__Upgrade" : "Upgrade",
+  "SUBMIT_RETURN_ANALYTICS" : "ui:Return or Replace Items | Review | Submit Return",
+  "ACCOUNT_RENEW_MEMBERSHIP_REMOVED_AUTO_RENEW" : "You are no longer enrolled in auto renewal. The change will take effect within the next two business days.",
+  "MODAL_ADDRESS_NOT_SERVICED_TITLE" : "Address Not Serviced",
+  "JS_DIALOG_NO" : "No",
+  "ERR_SHIPPING_INVALID" : "Shipping address cannot be changed. An item(s) in your order cannot be shipped to the desired address.",
+  "ERR_EMAIL_TO_FRIEND_MAX_EMAIL" : "Email can be sent to up to 10 addresses at once. Please remove extra addresses and try sending again.",
+  "RWD_LOCATOR_FILTER_OPTIONS" : "Filter Options",
+  "ERR_COSTCO_PAY_INVALID_EXP_DATE" : "Please enter a valid expiration date in format MM/YY.",
+  "DMC_INVALID_OTP" : "Invalid OTP.",
+  "REMOVE_ADDRESS" : "Remove Address",
+  "MY_ACCOUNT_PAYMENT_METHOD_AUTO_RENEW_MODAL_RIGHT_HEADER" : "Auto Renew",
+  "RETURN_ACTION_REPLACE_CONTENT_FRAUD_ITEM" : "We'll send you a replacement of the item you ordered to the original shipping address within 1-2 days after we have received and verified the item.",
+  "JS_VALID_MINLENGTH" : "Please enter at least {0} characters.",
+  "JS_DIALOG_OK" : "OK",
+  "PREVIEW" : "Preview",
+  "COSTCO_PAY_FOB_REMOVE_MODAL_TITLE" : "Remove Fob",
+  "STAY_ON_PAGE_BUTTON" : "Stay on Page",
+  "DMC_REMOVE_CARD_TEXT" : "Are you sure you want to remove this card as default ? ",
+  "ERROR_SYSTEM_VISA_CHECKOUT" : "Visa SRC is experiencing system issues. Try again later or choose a different payment method.",
+  "EMAIL_BUTTON_TITLE" : "Sign up",
+  "ERR_PH_EXPIRYDATE_REQ" : "???ERR_PH_EXPIRYDATE_REQ???",
+  "ERR_ENTER_ZIPCODE" : "Enter a valid zip code.",
+  "ERR_INVALID_AEROPLAN_NUMBER" : "???ERR_INVALID_AEROPLAN_NUMBER???",
+  "MOP_QUICK_PURCHASE_Checkout_Leave_Page_Primary_Purchase" : "Continue Purchase",
+  "EDD_INSTALLATION_SERVICES_hasNoGasHookup" : "No hookup of gas appliances based on local regulations or coverage area (haul-away only when uninstalled by member)",
+  "ORDER_HISTORY_PAYMENT_DECLINED_NOTIFICATION" : "Your payment method was not authorized and needs to be updated to complete your order.",
+  "RWD_GIFT_MSG_REQUIRED_SUBTITLE" : "<p>You may only have one gift message per delivery address, per order.</p><p>A gift message is required for this item.</p>",
+  "ERR_CONFIRM_EMAIL_MISMATCH" : "Email addresses do not match.",
+  "ERR_REQUIRED_DRUG_NAME" : "Prescription Drug Name is Required",
+  "COSTCO_PAY_FOB_NO_ACTIVE_FOUND" : "No Fobs found with active status",
+  "MODAL_ADDRESS_RESIDENTIAL_WARNING" : "This address appears to be residential. Costco Business Center only delivers to commercial addresses. Using this address may result in delay or cancellation of an order.",
+  "WISHLIST_DELETE_CONFIRMATION_TITLE" : "Confirm your action",
+  "MEMBERVERIFICATION_MEMBERSHIP__ValidateMembership_LabelText" : "Membership Verification",
+  "RETURN_SUBREASON_MANDATORY" : "Damage type is required.",
+  "SHIP_RESTRICTION_ERROR_KEY" : "_ERR_CART_MSG.024",
+  "MOP_QUICK_PURCHASE_Checkout_PostLockdown_Leave_Page_Body_Renew" : "Are you sure you want to leave this page? Your membership needs to be renewed to checkout. A membership is not required for pharmacy prescription orders. Other exclusions may apply.",
+  "COSTCO_PAY_FOB_DISABLE_MODAL_BODY" : "<p>Are you sure you want to disable Fob number <&=fobNumber&>?</p> <p>Disabling a Fob means the Fob cannot be used for any purchases.</p>",
+  "ERR_INVALID_QUANTITY" : "We're sorry, but you must enter a whole number in the quantity field.",
+  "JS_DIALOG_CHK_DELIVERY_ADDRESS" : "Check Delivery Address",
+  "ERR_INVALID_CASHCARDNO" : "You have entered an invalid Costco Shop Card number. Please check your entry for accuracy and try again.",
+  "ACCOUNT_RENEW_MEMBERSHIP_ADDED_AUTO_RENEW_AFTER_BILLING" : "You have successfully set up membership auto renewal. The change will take effect within the next two business days. <br/> It looks like your membership will expire soon and we might not have enough time to apply your new auto renewal. Please <a href=\"/customer-service.html\">contact us</a> or visit your <a href=\"/warehouse-locations\">nearest warehouse</a> for assistance with your membership renewal.",
+  "CHECKOUT_ORDER_TOTAL_SHIPP_MSG" : "Shipping & Handling for ",
+  "JS_LEAVING_DOMAIN_ALERT_SINGLE_TAG" : "<p>You are leaving Costco.com to visit a website not hosted by Costco. Costco is not responsible for content provided by this or other third party sites, including those to which you may be redirected.</p><p>You are subject to the Privacy Policy and Terms & Conditions of the destination site(s) collecting your information, rather than those of Costco.</p>",
+  "ERR_DOB_MINOR" : "You must be at least 18 years old to purchase a membership.",
+  "SHIPPING_TITLE" : "Shipping",
+  "DATE_TEXT_SMALL_PACK" : "Estimated ",
+  "SFL_REMOVED_FROM_THE_CART" : "Removed {0} from the cart",
+  "PDETAIL_SELECTED_TITLE" : "- Selected",
+  "TOBACCO_NOTIFICATION_ACCEPT" : "Accept",
+  "ERR_REMOVE_SELECTED_TO_CART_MSG" : "Select an item to remove from list.",
+  "DMC_LEAVE_DMC_DIALOG_TITLE" : "Are you sure ?",
+  "JS_VALID_EMAIL" : "You have entered an invalid email address. Please enter a valid email address using the format \"John@example.com.\"",
+  "CMPP_NETWORK_NAME" : "Costco Specialty",
+  "RWD_BD_QUESTIONNAIRE_DISAGREE" : "Disagree",
+  "TICKET_OPS_COSTCO_LIVE_TICKETS_HOME" : "Costco Live Tickets Home",
+  "ERR_EMAIL_MAX_LENGTH" : "Sign In Email must be less than 251 characters.",
+  "ERR_INVALID_LNAME_REQUIRED" : "Last name is required.",
+  "NEXT_IMAGE" : "Next image",
+  "RELATED_PRODUCT_ADDED_TO_CART" : "Added to Cart",
+  "JS_VALID_MAXLENGTH" : "Please enter no more than {0} characters.",
+  "MEMBERSHIP_VALIDATION_LinkMembershipForPriceModal_Title" : "Link Membership for Price",
+  "RETURN_ACTION_MANDATORY" : "Please select replace or refund for your item(s).",
+  "CCPA_STATES_VALIDATION_MSG" : "We are currently not processing requests for individuals in this state.",
+  "SMART_APP_CLOSE" : "Close",
+  "SCHED_DELIV_NO_INSTALLATION_ALERT" : "Only delivery is available in your area. Due to local laws or codes, installation services are not available.",
+  "ERR_MULTIPLE_PRESCRIPTION_IN_BASKET" : "Only one patient per transaction is allowed. We are unable to add the selected prescription(s) as another patient’s medication is already in your cart. To continue, <a href= \"javascript:COSTCO.rxPrescriptionStatus.deselectPrescription()\">deselect your prescription(s)</a> or <a href= \"javascript:COSTCO.rxPrescriptionStatus.removePrescriptionsFromCart()\">remove the other prescription(s)</a> from your cart.",
+  "CHECKOUT_DELIVERY_DeleteGiftMessage" : "Delete Gift Message",
+  "MODAL_ADDRESS_NOT_SERVICED_FOR_RESIDENTIAL" : "Please visit your nearest Costco Business Center location or shop <a href=\"https://www.costco.com\" class=\"body-copy-link\">Costco.com</a> for residential deliveries.",
+  "ERR_INVALID_STATE_REQUIRED" : "State is required.",
+  "LEARN_MORE_ACCOUNT_STATUS_TITLE" : "???LEARN_MORE_ACCOUNT_STATUS_TITLE???",
+  "LIVE_TICKETS_MODAL_BUTTON_LEAVE_PAGE" : "Leave Page",
+  "RETURN_ADDRESS_EDIT_SAVE" : "Save and Select Address",
+  "CCPA_EDIT_INFO_YEAR_OF_BIRTH" : "To help us verify your identity, please provide your birth year. We will use this for verification and will not store this information.",
+  "SUBMIT_RETURN" : "Submit Return",
+  "DMC_APPLY_DIALOG_TEXT" : "You are leaving Costco to apply for the Costco Anywhere VisaÂ® Card by Citi on a website hosted by Citi.",
+  "MINIMUM_ORDER_AMOUNT_TOOLTIP" : "A minimum of ${0} (before tax and after instant savings) is required to place orders for Order Pickup.",
+  "MODAL_ADDRESS_NOT_SERVICED" : "Costco Business Center can only accept orders from a business with a commercial address.  Shop <a href=\"https://www.costco.com\">Costco.com</a> for orders with Residential addresses.",
+  "ACCOUNT_RENEW_MEMBERSHIP_UNVERIFIED_MembershipNumberMissing_Text" : "Please enter a valid membership number.",
+  "ERR_INCORRECT_DATE_OF_BIRTH" : "You have entered an incorrect date.",
+  "GROCERY_ITEM_UNAVAILABLE_PRIMARY" : "Continue Shopping",
+  "MIN_ERROR_TEXT" : "This item has a minimum order quantity of {0}",
+  "MODAL_ADDRESS_NOT_SERVICED_CART_MERGE" : "Please visit your nearest Costco Business Center location or shop <a href=\"https://www.costco.com\" class=\"body-copy-link\">Costco.com</a>.",
+  "LISTS_ADDED_ITEMS_MSG" : "Items have been added to list.",
+  "EDD_INSTALLATION_SERVICES_hasNoOtrHookup" : "No hookup of over-the-range microwaves based on local regulations or coverage area (haul-away only when uninstalled by member)",
+  "PDETAIL_ONLINE_PRICE_BD" : "Delivered Price",
+  "ERR_MEMBERSHIP_TNC_NOT_SCROLLED" : "You must scroll through the Member Privileges & Conditions to check the checkbox.",
+  "RETURN_UPS_METHOD_DROPOFF_DESC" : "Place your item(s) in a package, print your return label and take to your nearest UPS location",
+  "MY_ACCOUNT_PAYMENT_METHOD_AUTO_RENEW_MODAL_TITLE" : "Add Card for Auto Renew",
+  "MAGNIFYING_GLASS_ZOOM_IN" : "Zoom In",
+  "MY_ACCOUNT_PAYMENT_METHOD_AUTO_RENEW_MODAL_CHANGE_CARD_TEXT" : "Are you sure you want to change the credit card selected for auto renew?<br/><br/>Your membership is currently being paid for by another Costco member. Making this change will remove this automatic payment from your membership.",
+  "ERR_INVALID_CASHCARDPIN" : "You have entered an invalid pin number. Please check your entry for accuracy and try again.",
+  "JS_DIALOG_CHK_ADDRESS" : "Check Address",
+  "ERR_OTP_DMC_EXPIRED_TOKEN" : "Your code has expired. Request another one.",
+  "ERR_REQUIRED_DRUG_ALLERGIES_V2" : "Select or enter drug allergies",
+  "EMAIL_OPT_IN_SUCC" : "Thank you for your interest in our emails! To ensure you receive them in your inbox, please add CostcoNews@online.costco.com to your address book.",
+  "ZIPCODE_SELECTOR_CHANGE_DELIVERY_ZIP_CODE_BUTTON" : "Change Delivery Zip Code",
+  "RETURN_CONTINUE" : "Continue",
+  "ACCOUNT_RENEW_MEMBERSHIP_Has_Payer_Use_Card_Dialog_Body_Text" : "Your membership is currently being paid for by another another person.<br/><br/>If you use a new card for Auto Renew, your membership will no longer be automatically paid for by another person.",
+  "REMOVE_ADDR_MSG" : "Are you sure you want to remove this address?",
+  "EDIT_SHIPPING_ADDRESS" : "Edit Shipping Address",
+  "ERR_INVALID_ZIP" : "Enter a Valid ZIP Code",
+  "ZIPCODE_SELECTOR_CHANGE_DELIVERY_TEXT_ND_OFF" : "You are changing your delivery ZIP code from {0} to {1}. Changing your ZIP code may impact pricing, item availability, fees and taxes on items already in your cart.",
+  "GROCERY_AVAILABLE" : "???GROCERY_AVAILABLE???",
+  "ACCOUNTADMIN__Cancel_ButtonText" : "Cancel",
+  "JS_DIALOG_AUTHORIZED_USER_SELECT" : "Select",
+  "ERR_INVALID_PONUM" : "Please enter a valid PO number.",
+  "ERR_RESIDENTIAL_NOT_SERVICED_MSG" : "Costco Business Center only delivers to commercial addresses for this ZIP. Please visit your nearest Costco Business Center location or shop <a href=\"https://www.costco.com\" class=\"body-copy-link\">Costco.com</a> for residential deliveries.",
+  "PDP_REDESIGN_V2_BUNDLE" : "Bundle",
+  "SHIPCODE_MAIL" : "mail",
+  "RWD_CA_ZIP_LABEL" : "Postal Code",
+  "PAUSE" : "Pause",
+  "ERR_COSTCO_PAY_REQUIRED_FOB_NAME" : "Please Enter a Fob Name",
+  "REGIONALSELECTOR_BUTTON" : "???REGIONALSELECTOR_BUTTON???",
+  "RESEND_EMAIL_REQUEST_DEPENDENT" : "Resend Email Request",
+  "ERR_INVALID_BILLINGNICKNAME" : "Please enter a nickname.",
+  "SEARCH_SHOW_MORE_OPTIONS" : "Show more options ",
+  "UPDATE" : "Update",
+  "ORDER_HISTORY_PAYMENT_MODAL_ACTION" : "Apply Payment",
+  "ERR_REQUIRED_GENDER" : "Select a Gender.",
+  "ACCOUNT_RENEW_MEMBERSHIP_ADDED_AUTO_RENEW_TWO_DAYS_BEFORE_BILLING" : "Due to your renewal month starting within two days, your membership auto renewal billing will only become effective next year. This year''s membership will need to be renewed online or at the <a href=\"/warehouse-locations\">warehouse</a>.",
+  "ERR_MISSING_COORELATION_ID" : "Missing required correlation identifier.",
+  "ERR_ORDER_ITEM_NOT_IN_CART" : "The item is not currently in your shopping cart.",
+  "VIEW_NEXT_THUMBNAILS" : "View Next Set of Thumbnails",
+  "ORDER_HISTORY_MONTH_MARCH" : "March",
+  "ERR_REQUIRED_DRUGNAME_RXNUMBER" : "You have not selected any prescriptions.",
+  "ADDHOUSEHOLD_MEMBERSHIP__Remove_ModalTitle" : "Remove Person",
+  "MOP_QUICK_PURCHASE_Checkout_Leave_Page_Body" : "Are you sure you want to leave this page? If you shop as a non-member, you will be unable to buy member-only items and will be assessed a 5% non-member surcharge on your order (does not apply to pharmacy prescription orders).",
+  "ACCOUNT_RENEW_MEMBERSHIP_Has_Payer_Dialog_Cancel_Button_Text" : "Cancel",
+  "GFORM_RCP_LAST_NAME" : "Recipient's Last Name",
+  "ERR_REQUIRED_POLICYHOLDER_NAME" : "Policyholder Name is required.",
+  "RWD_US_ZIP_LABEL" : "Zip Code",
+  "FEATURE_CAROUSEL_NEXT" : "next featured products",
+  "RELATED_ITEM_ADD_ERROR_KEY" : "_ERR_CART_MSG.030",
+  "ERR_INVALID_SHIPPINGNICKNAME" : "Please enter a unique nickname that differs from any Billing Address nickname.",
+  "ORDER_HISTORY_MONTH_JUNE" : "June",
+  "ERR_REQUIRED_LOCATION" : "Location is required",
+  "ERR_INCOMPLETE_SEGMENTED_ZIP_CODE" : "Costco Business Center does not currently deliver to all areas of {0}. Please use your Zip+4 or <a href=\"javascript:void(0)\" class=\"body-copy-link\" onclick=\"javascript: COSTCO.zipCodeModal.getZipByAddressModal({0});\">enter the full delivery address</a> to check if we deliver to you.",
+  "ORD_WAREHOUSE_PICKUP_LABEL_BOPIW" : "Pick-Up",
+  "ERR_INVALID_CREDITCARDTYPE" : "The credit card type you have selected is invalid for the card number entered. Please check your entry for accuracy and try again.",
+  "ERR_PRESCRIPTION_EXCEEDS_MAX_LENGTH" : "Prescription exceeds maximum length.",
+  "ERR_COSTCO_PAY_INVALID_FOB_MIN_LENGTH" : "Check number and try again",
+  "RETURN_LINK_CHANGE" : "Change",
+  "ERR_FAMILY_MEMBER_EMAIL_ADDRESS" : "Enter a Family Member Email Address.",
+  "SFL_ADD_TO_LIST" : "Added {0} to the list",
+  "ERR_INVALID_QTY" : "Quantity must be one or more.",
+  "ERR_UNCHECK_NO_RETURN_PRODUCTS" : "Deselect Items Not Eligible For Return",
+  "ERR_REQUIRED_CONFIRM_PASSWORD" : "Confirm password is required",
+  "ERR_ADD_TO_CART_SELECT_ONE" : "Error: Please select at least one product.",
+  "SELECT_DETAILS" : "Select",
+  "ADDRESS_NOT_SERVICED_SHOP" : "Shop",
+  "CVV_AMEX_IMAGE" : "Checkout_CVV_AMEX.gif",
+  "LINK_MEMBERSHIP_BUTTON" : "Link Membership",
+  "ERR_CHECKOUT_PAYMENT_INVALID_COSTCOCASH_OR_PIN" : "You have entered an invalid Costco Shop Card number/Pin. Please check your entry for accuracy and try again.",
+  "ERR_YPC_CONFIRM_MEMBERSHIP_NUMBER" : "Confirm membership number is required.",
+  "SELF_ORDER_CANCEL_TITLE" : "Cancel Order",
+  "BD_QUESTIONNAIRE_TITLE" : "Delivery Address Conditions",
+  "CHANGE_EMAIL_NOTIFICATION_CONT" : "Continue",
+  "HERO_CAROUSEL_PREVIOUS" : "previous promo",
+  "ERR_REQUIRED_INSURANCE_PHONE" : "Insurance Phone is required.",
+  "ERR_INVALID_COMPANY_NAME_LENGTH" : "The text entered exceeds the maximum length for company name",
+  "COSTCO_ITEMNUMBER" : "Item #",
+  "RWD_QUANTITY" : "Quantity",
+  "ORDER_BYITEM_OUT_STOCK" : "The item is out of stock.",
+  "PDETAIL_IMAGE_OUT_OF_STOCK_ALT" : "Out of Stock",
+  "BEGINING_OF_DIALOG_CONTENT" : "Beginning of dialog content",
+  "RESALE_LICENSE_MODAL_BODY" : "Your Business Delivery account is enabled for resale purchases.  Items intended for resale purchase must be indicated.  Does your order contain resale items?",
+  "QUICK_ADD_QTY_TO_ADD" : "Quantity ",
+  "ORDER_HISTORY_MONTH_APRIL" : "April",
+  "ERR_COSTCO_PAY_INVALID_FOB_NAME" : "Costco Pay Fob Name contain invalid character",
+  "COSTCO_PAY_FOB_MODAL_PRIMARY" : "Save",
+  "PDETAIL_ITEMS_ADDED_TO_CART" : "Item added to cart",
+  "MEMBERAPPLICATION_AFFILIATEHOUSEHOLD__Grey3_Text" : "Household card holders will be asked to present proof that they live at the same address as the membership owner.",
+  "ERR_INVALID_COMPANY_NAME" : "???ERR_INVALID_COMPANY_NAME???",
+  "REMOVE_DEPENDENT_TITLE" : "???REMOVE_DEPENDENT_TITLE???",
+  "AB_ADD" : "Save Address",
+  "WISHLIST_DELETE_CONFIRMATION_MESSAGE" : "Do you want to delete this wish list?",
+  "PDETAIL_CONFIGURED_PRICE" : "* Configured Price",
+  "ERR_SELECT_AN_OPTION" : "Select an option above.",
+  "RETURN_REQUEST_FAILED_MESSAGE" : "Something went wrong and we are unable to complete your return request. Please try again later or contact <a href=\"https://customerservice.costco.com\">Customer Service</a>.",
+  "PRIMARYMEMBER_MEMBERSHIP__Save_ButtonText" : "Save",
+  "SCHED_DELIVY_SERVICE_YES" : "Yes",
+  "TOBACCO_TERMS_ERR_MSG" : "To continue with your order, you must confirm you are 21 years of age or older, or remove the tobacco items from your cart.",
+  "ERR_ACH_CARDTYPE_REQ" : "Select an account type.",
+  "LISTS_SAVE" : "Save",
+  "EARLIEST_DELIVERY_ON_TEXT_EDD" : "Earliest",
+  "ORDER_HISTORY_MONTH_SEPTEMBER" : "September",
+  "ERR_INVALID_PROMO_CODE" : "Please enter a valid promo code.",
+  "CVV_REENTER" : "Re-enter the CVV code for security purposes.",
+  "RWD_CLICK_ZOOM" : "Click or Tap to Zoom",
+  "SHIPCODE_NO_SHIPPING" : "no shipping",
+  "PDP_REDESIGN_V2_HIDE_ORDER_SUMMARY" : "Hide Order Summary",
+  "GFORM_RCP_FIRST_NAME" : "Recipient's First Name",
+  "ERROR_SELECT_VISA_CHECKOUT" : "Select the Visa SRC button to proceed or choose a different payment method.",
+  "SCHED_DELIV_DISHWASHER_KIT" : "Dishwasher Kit",
+  "EDD_DELIVERY_SERVICES_CHECKOUT_SUBTITLE" : "Services",
+  "ERR_INVALID_DELIVERY_ZIP_CODE" : "Please enter a valid ZIP code",
+  "ERR_INVALID_FNAME_REQUIRED" : "First name is required.",
+  "ERR_INVALID_ACH_SPECIAL_CHARACTERS" : "Value must not have special characters.",
+  "ERR_CHECKOUT_PAYMENT_EMPTY_CARDNUMBE_PIN" : "Please enter a CVV code.",
+  "ADDTOCART" : "Add to Cart",
+  "LIVE_TICKETS_CANCEL_ORDER_MODAL_TITLE" : "Live Tickets Order",
+  "ERR_INVALID_LASTNAME" : "Please enter your last name.",
+  "LIVE_TICKETS_MODAL_LEAVE_PAGE_TEXT" : "If you leave this page, your Costco Live Tickets order will be cancelled.",
+  "CHECKOUT_DELIVERY_GiftMsg_Empty_Error" : "Gift message is required for this item",
+  "JS_CHANGE_DEFAULT_ADDRESS_TITLE" : "Change Default Address",
+  "JS_DIALOG_AUTHORIZED_USER_TITLE" : "Authorized User",
+  "EDD_ERR_SHIP_MSG" : "Item #{0} cannot ship to selected destination.<br/>Please review item details for shipping restrictions. You may complete your purchase without the item or select a new delivery address.",
+  "ERR_PICKUP_UNAVAILABLE_CART_HEADER" : "One or more items are unavailable for Pick-Up at your selected warehouse.",
+  "RETURN_ACTION_REPLACE" : "Replace",
+  "COSTCO_GROCERY_TITLE" : "<span class=\"grocery-head two-day-delivery\">2-Day Delivery</span>",
+  "CASH_CARD_BALANCE" : "Card Balance:  ",
+  "SCHED_DELIV_SELECT_OPTIONS_HEADING" : "Select Options",
+  "LISTS_DELETE" : "Delete List",
+  "ERROR" : "Error",
+  "SCHEDULED_DELIVERY_DELIVERY_DATE" : "Delivery Date",
+  "ACCOUNTADMIN_PERSONAL_AddPerson" : "Add Person",
+  "ORDER_HISTORY_MONTH_MAY" : "May",
+  "ZIPCODE_SELECTOR_CHANGE_DELIVERY_QUESTION_ADDRESS_TYPE" : "Are you sure you want to change your delivery address type?",
+  "CHECKOUT_DELIVERY_YourNameRequired" : "Please enter your name",
+  "MEMBERVERIFICATION_MEMBERSHIP__InvalidMembershipNumber" : "Please enter a valid membership number.",
+  "LIVE_TICKETS_GIFT_MESSAGE_MODAL_PRIMARY_BUTTON" : "Save",
+  "COMPARE_ALREADY_ADDED" : "This product is already part of the comparison.",
+  "ERR_INVALID_BUSINESS_NAME" : "Please enter a business name.",
+  "TIMEOUT_MODAL_HEADER" : "Are you still there?",
+  "ERR_REQUIRED_CONFIRM_EMAIL" : "Confirm email address is required",
+  "PLAIN_PACKAGING_USE" : "Use Plain Packaging",
+  "ERR_INVALID_QUANTITY_BD" : "We're sorry, but you must enter 1 or more in the quantity field.",
+  "DELIVERY_DETAILS_PICKUP" : "Pick-Up Details",
+  "HIDE_ADDITIONAL_TIRE_FEE_DETAILS" : "???HIDE_ADDITIONAL_TIRE_FEE_DETAILS???",
+  "DMT_CONSTANT" : "DMT",
+  "RETURN_COMMENTS_MANDATORY" : "Comments are required.",
+  "MEMBERSHIP_VALIDATION_Shop_As_Non_Member_Button_Text" : "Shop as Non-Member",
+  "DMC_LEAVE_DMC_DIALOG_TEXT" : "Are you sure you dont want to link a payment method to your digital membership card ?  ",
+  "MOP_QUICK_PURCHASE_Checkout_Leave_Page" : "Leave Page",
+  "JS_DIALOG_AUTHORIZED_USER_OK" : "Continue to Application",
+  "CHANGE_PAYMENT_METHOD" : "Change Payment Method",
+  "DELIVERY_SERVICES_INFORMATIONAL_TITLE" : "Important Information",
+  "ERROR_BILLING_ADDRESS_VISA_CHECKOUT" : "Costco cannot bill to the billing address you selected in your Visa SRC account. Select a different billing address using Visa SRC or choose a different payment method.",
+  "ERR_INVALID_CVV" : "Please enter a valid CVV code.",
+  "RWD_VENDOR_CTA_BUTTON_TEXT" : "Request Consultation",
+  "_ERR_MEMBERSHIP_SECONDARY_VALIDATION_JS_PAST_DATE" : "Please enter a valid past date.",
+  "ERR_COSTCO_PAY_INVALID_FOB_NUM" : "Please enter a valid Fob Number",
+  "DISABLE_AUTOREFILL_REMINDER_DIALOG_TITLE" : "Disenroll from Auto Refill",
+  "ERR_YPCNM_EMAIL_ADDRESS_INVALID" : "Enter a valid email address.",
+  "ORDER_HISTORY_MONTH_OCTOBER" : "October",
+  "HEADER_REGION_OFFSCREEN_TEXT" : "(expand to select region)",
+  "ERR_REQUIRED_PHYSICIAN_STATE" : "Please select a state.",
+  "SELF_ORDER_CANCEL_REASON_CODES_MANDATORY" : "Please select a reason for cancelling.",
+  "CMPP_COSTCO_MAIL_ORDER" : "Costco Mail Order",
+  "ERR_YPC_CONFIRM_EMAIL_MISMATCH" : "Email addresses do not match.",
+  "SUBMIT_CONTINUE" : "Continue",
+  "RWD_ITEM_BACKORDERED" : "Item Backordered",
+  "SMART_APP_ANDROID_STORE" : "Shop, save, find a warehouse and more.",
+  "ERROR_CARD_VISA_CHECKOUT" : "The card selected from your Visa SRC account is not accepted by Costco. Select a different card using Visa SRC or choose a different payment method.",
+  "COSTCO_PAY_FOB_EDIT_MODAL_TITLE" : "Edit Fob",
+  "JS_DIALOG_AGREE" : "Agree",
+  "LIVE_TICKETS_MODAL_LEAVE_PAGE_TITLE" : "Leave Page",
+  "TRACK_ORDER_TIME_UNAVAILABLE" : "Not Available",
+  "COSTCO_PAY_FOB_REMOVE_MODAL_PRIMARY" : "Remove",
+  "LTL_CONSTANT" : "ltl",
+  "SHIP_PAD_MSG_SERVICE_DOWN" : "We're sorry, but there appears to be an error with this transaction.  Please try again, or call customer service at 1-800-955-2292.",
+  "ERROR_SYSTEM_MASTERPASS" : "Masterpass is experiencing system issues. Try again later or choose a different payment method.",
+  "COMPARE_NO_PRODUCTS" : "Compare up to 4 Products",
+  "EDD_INSTALLATION_SERVICES_refer" : "Hookup of electric appliances (built-ins excluded)",
+  "PDETAIL_OPTION_SELECT" : "Select",
+  "DELETE_PAY_METHOD_CONFIRM" : "Do you want to delete this payment method?",
+  "RWD_LOCATOR_SHOW_OPTIONS" : "Show Filter Options",
+  "MEMBERSHIP_AddPerson" : "Add Person",
+  "JS_DIALOG_EXTERNAL_LINK" : "Visit External Link ",
+  "TOOLTIP_ECOFEE_INFO" : "Please note, the Fee associated with this item is based on the delivery address zip code. ",
+  "ERR_EXPIRYDATE_REQ" : "Please enter an expiration date.",
+  "JS_CHARACTERS_REMAINING" : "Characters Remaining",
+  "ERR_ELECTRONIC_CANNOT_RETURN_2" : "days.",
+  "ERR_ELECTRONIC_CANNOT_RETURN_1" : "Specific electronic items cannot be returned past",
+  "ERR_ADDRESS_INVALID_CONTACT_NAME" : "Please enter a Contact Name.",
+  "RENEW_UPGRADE__NO" : "No, Renew Only",
+  "ERR_YPC_EMAIL_ADDRESS" : "Email address is required.",
+  "UP_CHEVRON_PAN_UP" : "Pan Up",
+  "ERR_INVALID_CREDITCARD" : "Please enter a valid credit card number with no spaces or dashes.",
+  "COOKIE_COMPLIANCE_BING_WARNING_MESSAGE" : "The map is currently disabled because Personalized Advertising is turned off in your cookie settings. <a tabindex=\"0\" role=\"button\" class=\"ot-sdk-show-settings\" onclick=\"verifyOTSystemDown(event);\">Update your cookie settings</a>",
+  "CART_EMPTY_SHORT" : "Your shopping cart is empty",
+  "MODAL_EDIT_DELIVERY_METHOD" : "Edit Delivery Method",
+  "RWD_CHECK_CASH_CARD_BALANCE" : "Check Balance",
+  "ERR_MYACCOUNT_ADDRESSBOOK_EDIT_INVALID_ZIP" : "You have entered an invalid zip code. Please correct your entry to continue saving this address.",
+  "ERR_AWARENESS_CODE" : "Please enter a valid Awareness Code.",
+  "ERR_INVALID_DELIVERY_ZIP_CODE_MSG" : "Costco Business Center does not deliver to your area. Please visit your nearest <a href=\"/warehouse-locations\" class=\"body-copy-link\">Costco location</a> or shop <a href=\"https://www.costco.com\" class=\"body-copy-link\">Costco.com</a>.",
+  "ERR_CART_MSG_QTY_INC_BD" : "Quantity must be in increments of {0}",
+  "ALCOHOL_TERMS_ERR_MSG" : "To continue with your order, you must confirm you are 21 years of age or older.",
+  "SHIP_RESTRICTION_INVALID_MESSAGE" : "This product is unavailable for delivery in {0}. Enter a different delivery postal code to check for item availability.",
+  "ACCOUNT_RENEW_MEMBERSHIP_Has_Payer_Use_Card_Dialog_Title_Text" : "Use Card for Auto Renew",
+  "ERR_MEMBERSHIP_TNC_NOT_CHECKED" : "You must check the checkbox to buy a membership. ",
+  "SMART_APP_OPEN" : "OPEN",
+  "MEMBERVERIFICATION_MEMBERSHIP__Continue_ButtonText" : "Continue",
+  "DATEPICKER_CHOOSE_DATE" : "???DATEPICKER_CHOOSE_DATE???",
+  "CART_REMOVE_MEMBERSHIP_WARNING_MODAL_Keep_Membership_Button_Text" : "Keep Membership",
+  "FILTER_LEFT_NAV_RESULTS" : "results",
+  "LIVE_TICKETS_GIFT_MESSAGE_MODAL_SECONDARY_BUTTON" : "Cancel",
+  "EDD_INSTALLATION_SERVICES_hasSecondApptReqd" : "2nd appointment required to install dishwasher or microwave and in some areas gas appliances",
+  "DISABLE_AUTOREFILL_REMINDER_DIALOG_CONTENT" : "Disabling refill reminders and submitting will disable the auto refill on all prescriptions",
+  "RWD_ADDRESS_CHANGE_SHIPPING" : "Change Shipping Address",
+  "RETURN_ACTION_REFUND_CONTENT_FRAUD_ITEM" : "Your refund will be processed within 1-2 days after we have received and verified the item.",
+  "BD_DELIVERY_ADDRESS_TERMS" : "Delivery Address Conditions",
+  "PDETAIL_NUMBER" : "Item &nbsp;",
+  "ERR_ROUTINGNUM_REQ" : "Routing Number is required.",
+  "REMOVE_OOS_ITEMS" : "???REMOVE_OOS_ITEMS???",
+  "ACCOUNT_PAYMENT_METHODS_Remove_Card_Button_Text" : "Remove Card",
+  "_ERR_MEMBERSHIP_PRIMARY_VALIDATION_MEMBERSHIP_ID_POSTLOCKDOWN" : "Please confirm and re-enter the membership number.",
+  "PDETAIL_SWATCH_OPTIONS" : "Select Color: ",
+  "CHECKOUT_DELIVERY_RecipientFirstNameRequired" : "Please enter recipient's first name",
+  "ERR_MYACCOUNT_ADDRESSBOOK_EDIT_INVALID_EMAIL" : "You have entered an invalid email address. Please enter a valid email address using the format \"John@example.com.\"",
+  "CONTINUE_SHOPPING" : "Continue Shopping",
+  "ERR_INVALID_DUALCART_MSG" : "Invalid order state, secondary cart checkout is in progress",
+  "SCHED_DELIV_NO_DATES_AVAILABLE" : "This item is temporarily unavailable.",
+  "LEFT_CHEVRON_PAN_LEFT" : "Pan Left",
+  "ERR_ADULT_HOUSE_DOB" : "This person must be at least 18 years old to purchase a membership.",
+  "SELECTED_DELIVERY_DATE_CALENDAR" : "Selected Delivery Date",
+  "SEARCH_SHOW_FEWER_OPTIONS" : "Show fewer options ",
+  "ERR_MODAL_ADDRESS_NOT_SERVICED" : "Delivery from Costco Business Center is not currently available in your area.",
+  "RETURN_UPS_PACKAGES_MANDATORY" : "Select number of packages.",
+  "COSTCO_PAY_FOB_ADDED_CONFIRM_MODAL_SECONDARY" : "Add Additional Fob",
+  "DOWN_CHEVRON_PAN_DOWN" : "Pan Down",
+  "CHECKOUT_DELIVERY_GiftMessageValidation" : "Special characters are not currently supported. Please review your message and update it with only alpha-numeric characters",
+  "ERR_REQUIRED_PHYSICIAN_PHONE" : "Please enter a valid 10 digit phone number.",
+  "ORDER_HISTORY_PAYMENT_MODAL_TITLE" : "Change Payment Information",
+  "CHECKOUT_DELIVERY_EditGiftMessage" : "Edit Gift Message",
+  "CART_REMOVE_MEMBERSHIP_WARNING_MODAL_POST_LOCKDOWN_Body_Text" : "Are you sure you want to remove the membership? A Costco membership is required to checkout. A membership is not required for pharmacy prescription orders. Other exclusions may apply.",
+  "ACH_AGREE_PROMPT" : "Please agree with the terms stated above.",
+  "TRACK_ORDER" : "Track Order",
+  "ERR_SELECT_LIST" : "Select a list to add item",
+  "ACCOUNT_RENEW_MEMBERSHIP_Has_Payer_Add_Card_Dialog_Title_Text" : "Add Card for Auto Renew",
+  "ERR_INVALID_MEMBERSHIP_NO_BD" : "Enter a valid membership number.",
+  "ERR_WAREHOUSE_PICKUP_REQUIRE_MEMBERSHIP" : "Warehouse Pick Up Requires a Membership Number",
+  "ERR_YPC_CONFIRM_EMAIL_ADDRESS" : "Confirm email address is required.",
+  "ERR_REQUIRED_EMAIL_MY" : "Please enter your email address.",
+  "PLAY" : "Play",
+  "CART_REMOVE_RENEWAL_WARNING_MODAL_Body_Text" : "Are you sure you want to remove your renewal? If you remove your renewal, member-only items will be removed from your cart and you will be assessed a 5% non-member surcharge on your order (does not apply to pharmacy prescription orders).",
+  "ORD_WAREHOUSE_EDT_TODAY_BOPIW" : "Today",
+  "MEMBERSHIP_VALIDATION_Expired_Upgrade_Button_Text" : "Upgrade",
+  "ERR_INVALID_DMC_TOKEN" : "Please enter a valid code.",
+  "SEND_REQUEST_DEPENDENT_BUTTON" : "Send Request ",
+  "ERR_INVALID_ZIPCODE" : "You have entered an invalid zip code. Please correct your entry to continue saving this address.",
+  "_ERR_SHIP_MSG_OOS_GLOBAL" : "???_ERR_SHIP_MSG_OOS_GLOBAL???",
+  "JS_DIALOG_CANCEL" : "Cancel",
+  "ERR_REQUIRED_PT_PROFILETYPE" : "Select a Profile Type",
+  "ACCOUNT_RENEW_MEMBERSHIP_Has_Payer_Add_Card_Dialog_Body_Text" : "Your membership is currently being paid for by another another person.<br/><br/>If you use a new card for Auto Renew, your membership will no longer be automatically paid for by another person.",
+  "JS_LEAVING_DOMAIN_ALERT_SINGLE_TAG_BD" : "<p>You are leaving costcobusinessdelivery.com to visit a website not hosted by Costco. Costco is not responsible for content provided by this or other third party sites, including those to which you may be redirected.</p><p>You are subject to the Privacy Policy and Terms & Conditions of the destination site(s) collecting your information, rather than those of Costco.</p>",
+  "ERR_REQUIRED_POLICYHOLDER_DOB" : "Policyholder Date of Birth is required.",
+  "ADMIN_MEMBER_SELF_BUSINESS" : "The business owner cannot be the Business Account Manager.",
+  "DELIVERY_WARNING" : "<span>Please Note: Only directions specifically to assist the driver in making your delivery should be entered here. <br /> Please do not request a specific delivery date / time here. Your business must be available to accept deliveries between 8 a.m. to 5 p.m. To request a different delivery date after you placed the order, please contact a Business Delivery Representative by calling 1-800-788-9968.</span>",
+  "ERR_REQUIRED_BIRTH_YEAR" : "Birth year is required.",
+  "EDD_GENERIC_SHIPPING_CLAUSE" : "The estimated delivery time will be 1 - 2 weeks in most areas from the time of order. Some areas are subject to longer transit, delivery and scheduling times and will require an additional 2 - 3 weeks",
+  "GROCERY_ITEM_UNAVAILABLE_TEXT" : "???GROCERY_ITEM_UNAVAILABLE_TEXT???",
+  "JS_DIALOG_LEAVING_SITE_TITLE" : "Visit Application",
+  "ERR_PH_NAME_REQ" : "???ERR_PH_NAME_REQ???",
+  "ITEM" : "Item",
+  "PRESCRIPTION_DETAIL__Delivery_Auto_Checkout" : "???PRESCRIPTION_DETAIL__Delivery_Auto_Checkout???",
+  "ERR_REQUIRED_EMAIL" : "Please enter an email address.",
+  "RWD_GIFT_ADD_MESSAGE_MODAL_INFO" : "Add a message to eligible items in your order. You may only have one gift message per delivery address, per order.",
+  "ERR_COSTCO_PAY_REQUIRED_EXP_DATE" : "Please enter an expiration date.",
+  "MEMBERVERIFICATION_MEMBERSHIP__Cancel_ButtonText" : "Cancel",
+  "EDD_INSTALLATION_SERVICES_CHECKOUT_SUBTITLE" : "Parts and Services",
+  "ERR_ADDRESS_TYPE_NOT_SELECTED" : "Select an address type.",
+  "RETURN_CHANGE_PICK_UP_ADDRESS" : "Change Pick Up Address",
+  "ORDER_HISTORY_MONTH_DECEMBER" : "December",
+  "COMMUNICATION_PREFERENCES_SUCCESS_MESSAGE" : "Preferences have been saved.",
+  "EDD_MSG_ADDITIONAL_TRANSIT_TIME" : "Delivery requires additional transit time. We estimate 7-10 business days for you to be contacted by the delivery agent to schedule your appointment.",
+  "EDD_ONLOAD_OUTOFSTOCK" : "The selected option is currently unavailable in the ZIP Code provided. Please select another option for additional availability. ",
+  "ERR_YPC_EMAIL_ADDRESS_INVALID" : "Enter a valid email address.",
+  "REMOVE_ITEMS_POPUP" : "Remove Items",
+  "ERR_ENTER_DOB" : "Enter a valid date of birth",
+  "HERO_CAROUSEL_NEXT" : "next promo",
+  "REMOVE" : "Remove ",
+  "MEMBERAPPLICATION_AFFILIATE__modalAddAffiliateTitle" : "Add Person to Membership",
+  "RWD_ADDRESS_CHANGE_BILLING" : "Change Billing Address",
+  "ADDHOUSEHOLD_TITLE" : "Add Person within Household",
+  "ERR_BC_CART_ZIP" : "Please enter a valid ZIP code.",
+  "ERR_CCNUM_REQ" : "Please enter a card number.",
+  "RETURN_ACTION_REFUND_PERISHABLE_UNDER_CONTENT" : "You do not need to return the item(s) back to Costco. We kindly ask that you properly dispose the item(s) you are requesting a replacement or refund for.",
+  "RWD_TAP_ZOOM" : "Tap or Pinch to Zoom",
+  "REGIONALSELECTOR_TITLE" : "???REGIONALSELECTOR_TITLE???",
+  "_ERR_MEMBERSHIP_SECONDARY_VALIDATION_JS_VALID_DATE" : "Please enter a valid date in format MM/YY.",
+  "APPLIANCES" : "Appliances",
+  "EMAIL_TEXT_EST_DELIVERY_DATE" : "Estimated Delivery",
+  "BACKORDER_TEXT" : "Backordered",
+  "ORDER_HISTORY_MONTH_AUGUST" : "August",
+  "SEARCH_VIEW_FEWER_CATEGORIES" : "View Fewer Categories ",
+  "EDD_INSTALLATION_SERVICES_hasBuiltIn" : "Hookup of built in appliances (excluding refrigerators)",
+  "EDD_INSTALLATION_SERVICES_hasNoBuiltIn" : "No hookup of built in appliance based on local regulations or coverage area",
+  "ERR_INVALID_COMPANY" : "Please enter a company name.",
+  "ZIPCODE_SELECTOR_CHANGE_DELIVERY_HEADER" : "Change Delivery Zip Code",
+  "ERR_PRIMARY_DOB" : "Primary Date of Birth information is incomplete or bad.",
+  "LEAVE_PAGE_POP_UP_TITLE" : "Leave Page",
+  "CMPP_NO_PHARMACIES_AVAILABLE" : "This item is currently not available at any pharmacies within your selected ZIP Code.",
+  "EMAIL_NOT_VALID" : "We're sorry, but that email address does not appear to be valid. Please review the information and try again.",
+  "ITEMS_SELECTED_RESALE" : "All items have been selected for resale.",
+  "MEMBERSHIP_EditPerson" : "Edit",
+  "Shipping_Gift_Message" : "Add a Gift Message",
+  "ERR_BAD_AEROPLAN_NUMBER" : "???ERR_BAD_AEROPLAN_NUMBER???",
+  "RWD_LOCATOR_HIDE_OPTIONS" : "Hide Filter Options",
+  "ACCOUNT_RENEW_MEMBERSHIP_REMOVED_AUTO_RENEW_AFTER_BILLING" : "You are no longer enrolled in auto renewal. The change will take effect within the next two business days. <br/> It looks like your membership will expire soon. We might not have enough time to cancel your auto renewal. If a charge appears, please <a href=\"/customer-service.html\">contact us</a> or visit your <a href=\"/warehouse-locations\">nearest warehouse</a> for assistance with your membership renewal. ",
+  "TEMP_REPLACED_ITEM_MODAL_TITLE" : "Shop Similar Items",
+  "JS_VALID_DATE" : "Please enter a valid date.",
+  "BACK_TO_OFFSCREEN_ARROW" : "Back to ",
+  "MY_ACCOUNT_PAYMENT_METHOD_AUTO_RENEW_MODAL_CHANGE_CARD_BUTTON" : "Change Card",
+  "CART_REMOVE_MEMBERSHIP_WARNING_MODAL_Remove_Membership_Button_Text" : "Remove Membership",
+  "LIVE_TICKETS_MODAL_BUTTON_STAY_ON_PAGE" : "Stay On Page",
+  "RWD_PROMO_CODE_SUCCESS" : "Promotion code has been applied",
+  "ERR_REQUIRED_YES_NO_ANSWER" : "Yes or No answer is required.",
+  "MY_ACCOUNT_PAYMENT_METHOD_AUTO_RENEW_MODAL_ADD_CARD" : "Add Card",
+  "COSTCO_CC_DISABLED" : "Costco no longer accepts the Costco Credit Card with Capital One. Please provide a new payment method.",
+  "MEMBERAPPLICATION_AFFILIATEHOUSEHOLD__Grey2_Text" : "Each membership includes one (1) additional free card for a spouse, domestic partner or immediate family member over the age of 18 living at the same address.",
+  "LEAVE_PAGE_POP_UP_BODY" : "If you leave this page, your order will be cancelled.",
+  "SMART_APP_TITLE" : "Costco App",
+  "COSTCO_PAY_FOB_DEFAULT_NAME" : "My New Fob",
+  "CMPP_NEW_PRODUCTS" : "New products to CMPP {0} of {1}",
+  "ERR_INVALID_POLICYHOLDER" : "Please enter a valid policy holder name.",
+  "MEMBERSHIP_ERROR__Misc_ErrorText" : "We are currently experiencing system issues and apologize for the inconvenience. We are working to resolve these issues quickly. Please check back later.<br>Thank you for your patience.",
+  "JS_DIALOG_YES" : "Yes",
+  "ERR_NEW_MEMBERSHIP_INVALID_EMAIL" : "You have entered an invalid email address. Please enter a valid email address using the format \"John@example.com.\"",
+  "_ERR_SHIP_MSG_OOS_ITEM" : "???_ERR_SHIP_MSG_OOS_ITEM???",
+  "MY_ACCOUNT_PAYMENT_METHOD_AUTO_RENEW_INTRO_TEXT" : "Your Costco Visa credit cards will automatically be displayed while they are active and will be used to renew your membership at the beginning of your renewal month.",
+  "REASONKEY_DAMAGED_ITEM" : "???REASONKEY_DAMAGED_ITEM???",
+  "EDD_INSTALLATION_SERVICES_notLower48" : "Due to limited service to your zip code, please contact us at www.costco.com/contact us or call 1-800-955-2292 to request a delivery quote and place order",
+  "ERR_INVALID_ITEM_NUMBER" : "Item number {0} is not found.",
+  "PDP_REDESIGN_V2_OF" : "&nbsp;of&nbsp;",
+  "GROCERY_NOT_AVAILABLE" : "???GROCERY_NOT_AVAILABLE???",
+  "ORDER_HISTORY_PAYMENT_AUTHORIZED_NOTIFICATION" : "Payment information has been successfully authorized. We will reprocess your order.",
+  "CART_POPUP_REMOVE" : "Remove",
+  "SEND_EMAIL_REQUEST_DEPENDENT" : "Send Email Request",
+  "RESALE_OPTION_YES" : "Yes",
+  "RWD_INCLUDED" : "Shipping Included",
+  "ZIPCODE_SELECTOR_CHANGE_DELIVERY_TEXT9" : "You are changing your delivery address type. Delivery methods, product selection, pricing and fees may change.",
+  "ZIPCODE_SELECTOR_CHANGE_DELIVERY_TEXT8" : "You are changing your delivery ZIP code from {0} to {1}. Delivery methods, product selection, pricing and fees may change.",
+  "ERR_REQUIRED_MEDICAL_CONDITIONS_V2" : "Select or enter medical conditions",
+  "ERR_INVALID_CITY_NAME" : "Enter a valid city.",
+  "DELIVERY_SERVICES_EXCLUDED_TITLE" : "Not Included Services",
+  "RELATED_PRODUCT_HEADER" : "Related Products",
+  "JS_VALID_CREDITCARD" : "Please enter a valid credit card number with no spaces or dashes.",
+  "END_OF_DIALOG_CONTENT" : "End of dialog content",
+  "ACCOUNT_RENEW_MEMBERSHIP_Has_Payer_Dialog_Add_Card_Button_Text" : "Add Card",
+  "MAX_ERROR_TEXT" : "This item has a maximum order quantity of ",
+  "RWD_BD_QUESTIONNAIRE_AGREE" : "Agree",
+  "ZIPCODE_SELECTOR_CHANGE_DELIVERY_TEXT5" : "You are changing your delivery ZIP code from {0} to {1}. Your selected delivery date will also be reset.",
+  "ZIPCODE_SELECTOR_CHANGE_DELIVERY_TEXT4" : "You are changing your delivery ZIP code from {0} to {1}. Changing your ZIP code will save your current shopping cart and you will begin using your cart for ZIP code {1}. Your selected delivery date will also be reset.",
+  "ZIPCODE_SELECTOR_CHANGE_DELIVERY_TEXT7" : "You are changing your delivery ZIP code from {0} to {1}. Any pricing changes or required fees and taxes will be adjusted. Your selected delivery date will also be reset.",
+  "ZIPCODE_SELECTOR_CHANGE_DELIVERY_TEXT6" : "You are changing your delivery ZIP code from {0} to {1}. Changing your ZIP code will empty the contents of your cart and your selected delivery date will be reset.",
+  "ZIPCODE_SELECTOR_CHANGE_DELIVERY_TEXT1" : "You are changing your delivery ZIP code from {0} to {1}. Changing your ZIP code will empty the contents of your cart.",
+  "ZIPCODE_SELECTOR_CHANGE_DELIVERY_TEXT3" : "You are changing your delivery ZIP code from {0} to {1}. Any pricing changes or required fees and taxes will be adjusted.",
+  "SELF_ORDER_CANCEL_ERROR_TITLE" : "Cancel Order Error",
+  "SHIP_SELECT_PRE_DEL_DATE" : "Select preferred arrival date",
+  "ZIPCODE_SELECTOR_CHANGE_DELIVERY_TEXT2" : "You are changing your delivery ZIP code from {0} to {1}. Changing your ZIP code will save your current shopping cart and you will begin using your cart for ZIP code {1}.",
+  "ERR_ACCOUNT_MANAGER_FAMILY_MEMBER_EMAIL_ADDRESS" : "You cannot use the account manager's email address. Enter the dependent's email address. ",
+  "ERR_CCPA_REQUIRED_CONFIRM_EMAIL" : "Confirm email address is required.",
+  "MY_ORDERS_FSA_EXPAND_ALL" : "Expand All",
+  "EDD_INSTALLATION_SERVICES_dishwasher" : "Hookup of dishwasher (Only when plug in)",
+  "FAMILYACCOUNT_PHARMACY_NEXT_BUTTON_LABEL" : "???FAMILYACCOUNT_PHARMACY_NEXT_BUTTON_LABEL???",
+  "WISHLIST_EDIT_ARRANGE_LIST_ENABLED" : "Edit/Arrange List mode enabled",
+  "PDETAIL_ONLINE_PRICE" : "Online Price",
+  "ERR_INVALID_CITY" : "Please enter a city name.",
+  "RESALE_OPTION_NO" : "No",
+  "INNOVEL_CONSTANT" : "innovel",
+  "ERR_MISSING_ORDER_ITEM_ID" : "Order Item ID is missing. Required for update.",
+  "RETURN_LINK_CHANGE_ITEM_RETURN_INFO" : "Change item return information",
+  "DMC_APPLY_DIALOG_TITLE" : "Visit Application",
+  "SCHD_ENTER_VALID_ZIP_CODE" : "Enter a Valid ZIP Code",
+  "ERR_ONETRUST_SYSTEM_DOWN_TITLE" : "System Down Error",
+  "ERR_INVALID_STATE" : "Please select a state name.",
+  "MY_ACCOUNT_PAYMENT_METHOD_AUTO_RENEW_HAS_PAYER_TEXT" : "Your membership is currently being paid for by another Costco member and is set to automatically renew each year.<br/><br/>To pay for your own membership, select \"Turn On\" for one of your cards or add a card below. For additional help, visit the membership counter at your local warehouse, or visit <a href=\"https://customerservice.costco.com\">Customer Service</a>.",
+  "HAS_DIFFERENCES" : "&nbsp;Has differences",
+  "TIMEOUT_MODAL_BODY" : "Due to inactivity, your session will expire in: <strong>{0} minute(s) {1} second(s)</strong>",
+  "EDD_INSTALLATION_SERVICES_hasOtrHookup" : "Hookup of over-the-range microwaves. Electrical hardwiring, if required, at an additional fee (member pays installer)",
+  "ERR_YPCNM_CONFIRM_EMAIL_MISMATCH" : "Email addresses do not match.",
+  "MY_ORDERS_FSA_COLLAPSE_ALL" : "Collapse All",
+  "ADDRESS_BOOK_SORT_FIRST_Z_TO_A" : "First Name (Z-A)",
+  "JS_VALID_MAX" : "Please enter a value less than or equal to {0}.",
+  "ERR_CARDTYPE_REQ" : "Please enter a card type.",
+  "ORDER_HISTORY_SHIPPING_EDIT_FAIL_LINE_ITEM_NOTIFICATION" : "We are unable to deliver this item to the address you selected. Please select a different delivery address.",
+  "BACKORDER_TEXT_MSG1" : "This product is backordered, and is expected to ship within the next {0} week(s).",
+  "BACKORDER_TEXT_MSG2" : "This product is backordered, and is expected to ship on {0}.",
+  "GROCERY_POSTAL_CHANGE_CONFIRM_TITLE" : "Change Delivery ZIP Code",
+  "EDIT_ADDRESS_SAVE_BUTTON" : "Save",
+  "BACKORDER_TEXT_MSG5" : "This product is backordered.",
+  "FORM_END" : "Form end",
+  "JS_VALID_URL" : "Please enter a valid URL.",
+  "BACKORDER_TEXT_MSG3" : "This product is backordered, and is expected to ship between {0} and {1} week(s).",
+  "ERR_INVALID_PHONE_10_DIGIT" : "Enter a valid 10-digit phone number.",
+  "BACKORDER_TEXT_MSG4" : "This product is backordered, and is expected to ship between {0} and {1}.",
+  "RWD_NAV_ALL_DEPT" : "All Departments",
+  "COMPARE_TOO_MANY_PRODUCTS" : "You can compare up to four items at once. Please adjust your selection to contain no more than four items.",
+  "MEMBERVERIFICATION_MEMBERSHIP__InfoDoesNotMatchOurRecords" : "The information you provided does not match our records. Please try again.",
+  "QUICK_VIEW__Modal_Title" : "Quick View",
+  "ACCOUNT_RWD__AddAdditionalPeople_AdditionalPersonCost_InfoText" : "The cost per Additional Person is prorated based on the number of months left in your current membership.",
+  "ERR_RETURN_NOT_ELIGIBLE" : "To return this item, contact <a href=\"https://customerservice.costco.com/app/answers/detail/a_id/9\">Customer Service</a>",
+  "ERR_SELECT_VARIANCE" : "Select",
+  "CHECKOUT_DELIVERY_RecipientNameRequired" : "Please enter recipient's name",
+  "_ERR_PONOTE_INVALID_CHARACTERS" : "PO/Notes field has invalid characters, please use alpha numeric.",
+  "ERR_VALID_ZIPCODE" : "A valid ZIP Code is required.",
+  "ADDRESS_BOOK_SORT_MOST_RECENT" : "Most Recent",
+  "ERR_INVALID_ACH_NAME" : "Name must be less than 29 characters.",
+  "ERR_INVALID_EMAIL" : "Enter a valid email address.",
+  "ERR_INVALID_CC_NAME" : "Please enter a valid name.",
+  "TOBACCO_CANCEL" : "Cancel",
+  "SQUARE_TRADE" : "SquareTrade",
+  "CCPA_CA_VALIDATION_MSG" : "We are only processing requests for California residents at this time.",
+  "ERR_INVALID_NICKNAME" : "Please enter an address nickname.",
+  "ERR_INVALID_FIRSTNAME" : "Please enter your first name.",
+  "ERR_COSTCO_PAY_REQUIRED_NAME_ON_CARD" : "Please enter a name.",
+  "RWD_TOOLBAR_FILTER" : "Filter",
+  "ADDRESSBOOK_MESSAGE1" : "Are you sure you want to delete the address?",
+  "ERR_PROMOTION_CODE_NOT_APPLIED" : "Promo code conditions have not been met. See promo code details or remove code to continue checking out.",
+  "ERR_YPCNM_CONFIRM_EMAIL_ADDRESS" : "Confirm email address is required.",
+  "CHECKOUT_DELIVERY_GiftMessageRequired" : "Please enter gift message",
+  "ERR_BD_REQUIRE_MEMBERSHIP" : "A valid membership number is required",
+  "JS_LEAVING_DOMAIN_ALERT" : "<p>You are leaving Costco.com to visit a website not hosted by Costco. Costco is not responsible for content provided by third party sites.</p><p>You are subject to the destination site&apos;s Privacy Policy and Terms & Conditions.</p>",
+  "ERR_LAST_NAME" : "Last name is required. ",
+  "ERR_ITEM_NOT_CONTACT" : "Item number {0} is not a contact.",
+  "MOP_QUICK_PURCHASE_Checkout_PostLockdown_Leave_Page_Body" : "Are you sure you want to leave this page? A Costco membership is required to checkout. A membership is not required for pharmacy prescription orders. Other exclusions may apply.",
+  "RENEW_UPGRADE_UPSELL__Membership_Renewal" : "Membership Renewal",
+  "ACCOUNT_RENEW_MEMBERSHIP_USE_CARD_FOR_AUTO_RENEW_DEFAULT_TEXT" : "Are you sure you no longer want to use this card for Auto Renew? Your membership will no longer be automatically renewed.",
+  "CHECKOUT_DELIVERY_SaveGiftMessage" : "Save Gift Message",
+  "SEARCH_VIEW_MORE_CATEGORIES" : "View More Categories",
+  "ERR_REQUIRED_PLAN_NAME" : "Plan Name is required.",
+  "ERR_SHIP_ADDR_SAME_AS_WHS_ADDR" : "Warehouse addresses cannot be used. Use Warehouse Pick Up for eligible items in your Cart.<a id='return-to-cart' href='/CheckoutCartView'> Return to Cart. </a>",
+  "RWD_APPLY_CASH_CARD" : "Apply Shop Card",
+  "RWD_US_STATE_LABEL" : "State",
+  "WISHLIST_EMAIL_CONFIRM_SEND" : "???WISHLIST_EMAIL_CONFIRM_SEND???",
+  "ERR_REQUIRED_PHYSICIAN_NAME" : "Please enter a valid Physician's name.",
+  "PDETAIL_MODEL" : "Model &nbsp;",
+  "ERR_ADD_TO_CART_HIGHER_QTY_2" : "Quantity cannot exceed {0}.",
+  "JS_VALID_DIGITS" : "Please enter only digits.",
+  "RETURN_CHANGE_PICKUP_LOCATION" : "Change Pick Up Address",
+  "ERR_INVALID_ACCOUNTNUM" : "Please enter a valid account number.",
+  "CLOSE_MENU" : "Close Menu",
+  "SFL_ITEM_SAVED_FOR_LATER" : "Saved {0} for later",
+  "MEMBERSHIP_VALIDATION_LinkMembershipForPriceStep1Modal_Body_InfoText_ALT" : "If you have a Costco membership, add your membership number to buy member-only items and avoid a 5% non-member order surcharge (does not apply to pharmacy prescription orders).",
+  "SCHED_DELIVY_SERVICE_NO" : "No",
+  "ERR_INVALID_DAY" : "Enter a valid day",
+  "ERR_INVALID_STATE_NAME" : "State is required.",
+  "MAGNIFYING_GLASS_ZOOM_OUT" : "Zoom Out",
+  "ERR_INVALID_LISTNAME" : "List name should not contain special characters: < > \" \\",
+  "TOBACCO_NOTIFICATION_CART" : "Tobacco Notification",
+  "TOBACCO_CONTINUE_TO_FORM" : "Continue To Form",
+  "TICKET_OPS_SELECT_SEATS" : "Select Seats",
+  "ERR_REORDER_NOT_ALLOWED_PICKUP" : "One or more items are not eligible for reorder.",
+  "ERR_MEMBERSHIP_NUMBER" : "Membership number is required.",
+  "COMPARE_ONE_PRODUCT" : "Compare up to 4 Products ",
+  "ORDER_BYITEM_MAX_ROWS" : "You have reached the maximum number of line items. Only {0} can be added at a time.",
+  "ADDRESS_NOT_IN_DELIVERY_AREA" : "Address not in Delivery Area",
+  "ORD_WAREHOUSE_EDT_TOMORROW_BOPIW" : "Tomorrow",
+  "SET_ADDRESS_TYPE" : "Set Address Type",
+  "RETURN_ACTION_REFUND_SELECTED" : "Refund to original form of payment",
+  "REMOVE_DEPENDENT_MESSAGE" : "???REMOVE_DEPENDENT_MESSAGE???",
+  "ERR_INVALID_LNAME" : "Enter a valid last name.",
+  "NAV_ALL_CAT" : "All",
+  "DMC_TRY_AGAIN_MESSAGE" : "Your card cannot be added at this time. Please try again later.",
+  "DECIMAL_ERROR_TEXT" : "Quantity must be a whole number",
+  "MEMBERSHIP_RENEW__Unable_to_Renew_HardCode" : "You are unable to renew your membership online. Please visit your <a href=\"/warehouse-locations\">local Costco warehouse</a>.",
+  "RWD_TOOLBAR_APPLY_FILTERS" : "Apply Filters",
+  "ERR_YPCNM_EMAIL_ADDRESS" : "Email address is required.",
+  "EDD_INSTALLATION_SERVICES_has_haul_away" : "Haul-away of old appliances (built-ins when uninstalled by member)",
+  "MY_ACCOUNT_PAYMENT_METHOD_AUTO_RENEW_MODAL_CHECKBOX" : "Use this card to renew and pay for my membership each year. I understand my Costco membership fee will automatically renew and be paid from my checking account or credit card annually on the first day of my renewal month until I cancel.",
+  "ERR_UNCHECK_PRODUCTS" : "Deselect Out of Stock or Unavailable Items",
+  "ERROR_SELECT_MASTERPASS" : "Select the Masterpass button to proceed or choose a different payment method.",
+  "PLAIN_PACKAGING_REMOVE" : "Remove Plain Packaging",
+  "DMC_RED_PATH_ERROR" : "Your card cannot be added at this time. For assistance, please call the number on the back of your Citi Visa card.",
+  "ERR_ADD_SELECTED_TO_CART_MSG" : "Select an item to add to cart.",
+  "MEMBERSHIP_VALIDATION_LinkMembershipForPriceModal_Continue_ButtonText" : "Continue",
+  "EDD_INSTALLATION_SERVICES_hasDishHookup" : "Hookup of dishwasher. Electrical hardwiring, if required, at an additional fee (member pays installer)",
+  "MEMBERSHIP_RENEW__ERR_INVALID_CCNUM_AUTO_RENEW" : "Payment type not accepted.<br/><br/>Accepted payment types include:<br/><ul style='list-style-type: disc;margin-left:35px;'><li style='list-style-type: disc;'>Mastercard (Credit or Debit)</li><li style='list-style-type: disc;'>Visa (Credit or Debit)</li></ul>",
+  "EDD_CARRIER_MSG_SHIPPING_MODE" : "This date is subject to change. The Delivery Agent will contact you to schedule an appointment once the product arrives at their terminal, which will be approximately 48-72 hours prior to delivery.",
+  "PDP_REDESIGN_V2_BUNDLE_ITEMS" : "Bundle Items",
+  "ERR_EXPYR_REQ" : "Please enter an expiration year.",
+  "RWD_VIEW_WISH_LIST" : "View Wish List",
+  "COSTCO_PAY_FOB_ADD_MODAL_TITLE" : "Add Fob",
+  "ERR_YPCNM_STREET_ADDRESS" : "Street address is required.",
+  "ERR_YPCNM_ZIPCODE" : "Enter a valid zip code.",
+  "CART_REMOVE_RENEWAL_WARNING_MODAL_Remove_Renewal_Button_Text" : "Remove Renewal",
+  "JS_VALID_MIN" : "Please enter a value greater than or equal to {0}.",
+  "EDD_INSTALLATION_SERVICES_hasNoDishHookup" : "No hookup of dishwasher based on local regulations or coverage area (haul-away only when uninstalled by member)",
+  "ERR_CREATE_ACCOUNT_PASSWORD_INVALID" : "Passwords must be between 8 and 20 characters in length and may not contain blank spaces or the following special characters: <, >, &rdquo; , \\",
+  "SCHED_DELIV_EDIT_OPTIONS_HEADING" : "Edit Parts and Services",
+  "RWD_HELP" : "Help",
+  "RETURN_UPSDROPOFF_PRINT_LABEL_ERROR_MESSAGE" : "You have exceeded the maximum amount of times you can print a return label. For assistance, please contact <a href=\"https://customerservice.costco.com\">Customer Service</a>.",
+  "LIST_EDIT_ANNOUNCER_MSG" : "List edit mode enabled,  save to confirm changes",
+  "PDP_REDESIGN_V2_MORE_ITEMS_SR_TEXT" : "Additional Images",
+  "AX_MAIN_CONTENT" : "Main Content ",
+  "ERR_HOUSE_DOB_MINOR" : "This person must be at least 18 years old to receive a membership card.",
+  "ERR_MEMBERSHIP_NUMBER_REQUIRED" : "Please enter your Costco membership number.",
+  "ERR_MISSING_DOCTOR_INFO" : "Doctor information is required.",
+  "RETURN_ACTION_REFUND_CONTENT" : "You will be refunded to the original form of payment within 1 - 2 days of returning the item(s).",
+  "HEADER_BANNER_TOOLTIP" : "Orders under ${0} (before tax and after instant savings) will be charged a ${1} delivery surcharge. Additional delivery fees may apply, including re-delivery charges if applicable.",
+  "ERR_COSTCO_PAY_INVALID_CARD_NUMBER" : "Please enter a valid card number.",
+  "ERR_SEARCHTERM_REQ" : "The search field was empty.  Please enter a search term.",
+  "JS_DIALOG_DISCARD_CHANGES" : "Discard Changes",
+  "HEADER_BANNER_TOOLTIP_GND" : "Orders under $100 (before tax and after instant savings) will be charged a $10 delivery surcharge. Additional delivery fees may apply, including redelivery charges if applicable.",
+  "MOP_QUICK_PURCHASE_Checkout_Leave_Page_Primary_Renewal" : "Continue Renewal",
+  "EDD_INSTALLATION_SERVICES_hasDishHookupPlugIn" : "Hookup of dishwasher (Only when plug in)",
+  "DELIVERY_SURCHARGE_WAIVED" : "Delivery Surcharge Waived.",
+  "EDD_CARRIER_MSG_WITH_NO_EDD" : "The Delivery Agent will contact you to schedule an appointment once the product arrives at their terminal, which will be approximately 48-72 hours prior to delivery.",
+  "_ERR_PONOTE_MAXLENGTH_EXCEEDED" : "PO/Notes field has a maximum character length of 50.",
+  "CART_REMOVE_MEMBERSHIP_WARNING_MODAL_Label" : "Remove Membership",
+  "ZIPCODE_SELECTOR_CHANGE_DELIVERY_VIEW_CART_BUTTON" : "View Cart",
+  "SCHED_DELIV_DATE_NOT_AVAILABLE" : "The selected delivery date is no longer available. Select a new delivery date.",
+  "ADDRESS_WARNING" : "Changes made here to your delivery or billing address will not update the address associated with your membership.",
+  "DMT_FULL_NAME_CONSTANT" : "DM Transportation",
+  "RETURN_REASON_CODES_MANDATORY" : "Reason for return is required",
+  "REMOVE_PRESCRIPTIONS_IN_CART" : "The existing prescriptions in your cart have been successfully removed. You may continue adding prescription(s) to checkout.",
+  "ERR_MODAL_ADDRESS_NOT_SERVICED_CART_MERGE" : "Delivery from Costco Business Center is not available in your area.",
+  "ERR_COSTCO_PAY_REQUIRED_FOB_NUM" : "Please enter a Fob Number",
+  "PRESCRIPTION_STATUS__OnFile" : "???PRESCRIPTION_STATUS__OnFile???",
+  "DATE_TEXT_ORDER_NOW_SUFFIX" : "if ordered now.",
+  "VIEW_PREVIOUS_THUMBNAILS" : "View Previous Set of Thumbnails",
+  "ERR_INVALID_STREETADDRESS_LENGTH" : "The text entered exceeds the maximum length for street address",
+  "ERR_INVALID_PH_CREDITCARD_SHORT" : "???ERR_INVALID_PH_CREDITCARD_SHORT???",
+  "RWD_VALID_EMAIL_THANKYOU" : "Thank you for signing up for our email offers",
+  "ERR_REQUIRED_PASSWORD_MATCH" : "The passwords don't match.",
+  "ACCOUNT_RENEW_MEMBERSHIP_USE_CARD_FOR_AUTO_RENEW" : "Auto Renew Card",
+  "ACCOUNT_RENEW_MEMBERSHIP_REMOVE_CARD" : "Remove Card",
+  "CL_CONSTANT" : "CL",
+  "ACCOUNTADMIN_REMOVE_PERSON_TITLE" : "Remove Person",
+  "COMPARE_BUTTON" : "Compare",
+  "ERR_MISSING_PATIENT_NAME" : "Patient name is required",
+  "ORDER_HISTORY_PAYMENT_UPDATE" : "Update Payment Information",
+  "JS_VALID_RANGE" : "Please enter a value between {0} and {1}.",
+  "ORDER_HISTORY_MONTH_FEBRUARY" : "February",
+  "EMPTY_CART" : "Empty Cart",
+  "MENU" : "Menu",
+  "RETURN_UPS_PICKUP_ADDRESS_MANDATORY" : "Pick up address is required.",
+  "ERR_INVALID_DELIVERY_ZIP_IN_HEADER" : "Enter a Valid ZIP Code",
+  "SCHED_DELIV_PARTS_SERVICE_CHANGE" : "The selected parts and services have changed. Review your selection.",
+  "SCHD_ZIP_REQUIRED" : "You must enter a ZIP code.",
+  "ERR_REORDER_NOT_ALLOWED" : "One or more items are out of stock or unavailable to reorder. ",
+  "ORDER_HISTORY_MONTH_NOVEMBER" : "November",
+  "COSTCO_PAY_PAYMENT_REMOVE_MODAL_SECONDARY" : "Cancel",
+  "CHANGE_EMAIL_MSG" : "You have made changes to your email address. By saving this information as default, you will be changing your costcobusinessdelivery.com login. Your password will remain the same. Would you like to continue?",
+  "EDD_INSTALLATION_SERVICES_hasElectricalHookup" : "Hookup of electric appliances",
+  "REMOVE_ITEMS" : "Remove Items",
+  "REASONCODE_KEY13" : "No Longer Wanted",
+  "REASONCODE_KEY12" : "Item damaged",
+  "ERR_RETURN_NOT_ALLOWED" : "One or more items are not eligible for return.",
+  "ERR_ADD_TO_CART_INVALID_QTY_2" : "Quantity cannot be less than {0}.",
+  "REASONCODE_KEY11" : "I refused my shipment",
+  "REASONCODE_KEY10" : "Item Missing",
+  "ORDER_HISTORY_MONTH_JANUARY" : "January",
+  "REASONCODE_KEY15" : "Damaged",
+  "REASONCODE_KEY14" : "Item damaged but shipping box is ok",
+  "ERR_INVALID_BIRTH_YEAR" : "Enter a valid birth year.",
+  "MA_DELIVERYDATEERROR" : "Select a delivery date.",
+  "ERR_COSTCO_PAY_REQUIRED_CARD_NUMBER" : "Please enter a card number.",
+  "HERO_CAROUSEL_OWL_DOT_LABEL" : "promo {0} of {1}",
+  "YPC_ERR_SELECT_AN_OPTION" : "Select an option above.",
+  "ERR_COSTCO_PAY_MISSING_USER_ID" : "Missing required Costco Pay User Id",
+  "COSTCO_PAY_FOB_NO_DEACTIVATED_FOUND" : "No Fobs found with deactivated status",
+  "ERR_INVALID_ROUTINGNUM" : "Please enter a valid routing number.",
+  "ERR_INVALID_YEAR" : "Enter a valid year",
+  "MY_ACCOUNT_PAYMENT_METHOD_AUTO_RENEW_MODAL_REMOVE_CARD" : "Remove Card",
+  "ERR_THRESHOLD_AMOUNT_MSG" : "A minimum of &#36;{0} (before tax and after instant savings) is required to place orders for Order Pickup, add &#36;{1} more to place your order.",
+  "NEXT_SLIDE" : "Next Promo",
+  "ERR_SHIP_ADDR_SAME_AS_WHS_ADDR_FIELD_VALIDATION" : "Warehouse addresses cannot be used or saved. Enter a different street address to continue.",
+  "NAV_LOCATIONS" : "Locations",
+  "RWD_ADDRESS_EDIT_SHIPPING_OPTION" : "Edit Shipping Option",
+  "ERR_YPC_CONFIRM_MEMBERSHIP_NUMBER_MISMATCH" : "Membership numbers do not match.",
+  "ERROR_SELECT_PAYMENT_METHOD" : "Select a payment method.",
+  "ADDTOCART_OUTOFSTOCK" : "Out of Stock",
+  "CMPP_LANDING_RESULTS_PAGE_DISPLAY_DESCRIPTION" : "Compare prices for {0} and other drugs at your local pharmacies through Costco’s Membership Prescription Program.",
+  "COSTCO_PAY_FOB_REMOVE_MODAL_BODY" : "<p>Are you sure you want to remove Fob #<&=fobNumber&>? Removing will permanently disable this Fob.</p> <p>This action cannot be undone. Purchase history will not be deleted.</p>",
+  "SCHED_DELIV_NOT_AVAILABLE_AT_ZIP" : "This item cannot be delivered to the selected address. Select a different address or return to your cart to remove this item.",
+  "ERR_INVALID_STREETADDRESS" : "Please enter a street address.",
+  "ERR_LANDING_INVALID_STATE" : "State is required.",
+  "ERR_INVALID_COSTCOCASH_INFORMATION" : "Invalid information. ?Please try again or call??1-888-426-7826??for assistance.",
+  "ERR_INVALID_MEMBERSHIP_NO" : "Please enter a valid membership number.",
+  "ERR_MODAL_ADDRESS_NOT_SERVICED_FOR_RESIDENTIAL" : "Costco Business Center only delivers to commercial addresses for this ZIP.",
+  "EDD_INSTALLATION_SERVICES_hasHaulAway" : "Haul-away of old appliances (built-ins when uninstalled by member)",
+  "ACCOUNT_RENEW_MEMBERSHIP_Has_Payer_Dialog_Use_Card_Button_Text" : "Use Card",
+  "EDD_INSTALLATION_SERVICES_hasPermitReqd" : "Permits required by local regulation (member pays installer)",
+  "ERR_INVALID_PAST_DATE" : "Please enter a valid future date.",
+  "_ERR_GENERIC_CRM_DOWN" : "We are experiencing system issues and some functionality may not be available. Please try again later.",
+  "ERR_COSTCO_PAY_PAST_EXP_DATE" : "Please enter a valid future date.",
+  "JS_VALID_ACCEPT" : "Please enter a value with a valid extension",
+  "_ERR_GENERIC_LIST_ITEM" : "One or more of the selected items were not added to your cart. Please adjust item quantities below",
+  "SHIP_PAD_MSG" : "Preferred Arrival Date available",
+  "ACCOUNT_RENEW_MEMBERSHIP_REMOVED_AUTO_RENEW_ON_BILLING" : "The billing process for your next renewal has already begun so your annual membership fee may still be charged to your credit card.  Please allow up to 24 hours for the membership changes to be reflected in your account.",
+  "CLOSE" : "Close",
+  "PDP_REDESIGN_V2_VIEW_ORDER_SUMMARY" : "View Order Summary",
+  "EDD_INSTALLATION_SERVICES_has_no_dish_hookup" : "No hookup of dishwasher based on local regulations or coverage area (haul-away only when uninstalled by member)",
+  "SHIP_RESTRICTED_ITEM" : "ship_restricted_item",
+  "LIVE_TICKETS_GIFT_MESSAGE_MODAL_ADD_TITLE" : "Add Gift Message",
+  "MEMBERSHIP_VALIDATION_Browse_Button_Text" : "Browse as Non-Member",
+  "MEMBERSHIP_VALIDATION_UpgradeMembershipModal_Title" : "Upgrade Membership?",
+  "ERR_INVALID_ADDRESS" : "Enter a valid street address.",
+  "RETURN_UPS_DROPOFF" : "UPS Dropoff",
+  "ERR_GROUP1_INVALID_ADDRESS" : "We're sorry, but there was no match found for the address.",
+  "ERR_CHECKOUT_DELIVERY_DATE" : "The selected delivery date is no longer available. Select a new delivery date.",
+  "RWD_ADD_MEMBERSHIP_NUMBER" : "Add Membership Number",
+  "EDIT" : "Edit",
+  "ADD_TO_LIST" : "Add to List",
+  "FAMILYACCOUNT_PHARMACY_ADD_BUTTON_LABEL" : "???FAMILYACCOUNT_PHARMACY_ADD_BUTTON_LABEL???",
+  "ERR_PH_CCNUM_REQ" : "???ERR_PH_CCNUM_REQ???",
+  "CHECKOUT_DELIVERY_Cancel" : "Cancel",
+  "BUTTON_CANCEL" : "Cancel",
+  "RWD_BD_QUESTIONNAIRE_HEADER" : "Delivery Address Conditions",
+  "DELIVERY_DETAILS" : "Delivery Details",
+  "COSTCO_PAY_FOB_DISABLE_MODAL_PRIMARY" : "Disable Fob",
+  "RIGHT_CHEVRON_PAN_RIGHT" : "Pan Right",
+  "MODAL_ADDRESS_NOT_SERVICED_FOR_RESIDENTIAL_v2" : "Please visit your nearest Costco Business Center location or shop <a href=\"https://www.costco.com\" class=\"h8-style-guide-link\">Costco.com</a> for residential deliveries.",
+  "EDD_INSTALLATION_SERVICES_hasDeliveryAllDelayed" : "Delivery of all appliances (your zip code takes 1-2 weeks longer)",
+  "BACKORDER_TEXT_ADD" : "Do you still want to add to cart?",
+  "ERR_INVALID_MONTH" : "Enter a valid month",
+  "ERR_INVALID_CCNUM_AUTO_RENEW" : "Payment type not accepted. Please try again.<br/><br/>Accepted payment types include:<br/><ul style='list-style-type: disc;margin-left:35px;'><li style='list-style-type: disc;'>Visa Credit Cards</li><li style='list-style-type: disc;'>Visa Signature Debit</li></ul>",
+  "WISHLIST_ITEM_ADD_CONFIRMATION_MESSAGE" : "The item was added to your wish list",
+  "PREVIOUS_IMAGE" : "Previous image",
+  "ERR_INVALID_STREETADDRESS_LENGTH_FRIENDLY_MESSAGE" : "Street addresses are limited to 30 characters. Try abbreviating roads and directions (e.g., Ave for Avenue, NW for Northwest).",
+  "ERR_ACH_CCNUM_REQ" : "Account Number is required.",
+  "REMOVE_PAYMENT_METHOD" : "Remove Payment Method",
+  "ZIPCODE_SELECTOR_CHANGE_DELIVERY_TEXT_ND_OFF_USBD" : "You are changing your delivery ZIP code from {0} to {1}. Changing your ZIP code may impact pricing, item availability, fees and taxes on items already in your cart and available payment methods in checkout.",
+  "COSTCO_PAY_FOB_MODAL_SECONDARY" : "Cancel",
+  "ERR_INVALID_DATE" : "Please enter a valid expiration date in format MM/YY.",
+  "PDETAIL_YOUR_PRICE" : "Your Price",
+  "PDP_REDESIGN_V2_ADDED_TO_BUNDLE" : "Added to Bundle",
+  "DEPOT_CUTOFF_TIME" : "3:00 PM",
+  "ORDER_HISTORY_MONTH_JULY" : "July",
+  "ERROR_BILLING_ADDRESS_MASTERPASS" : "Costco cannot bill to the billing address you selected in your Masterpass account. Select a different billing address using Masterpass or choose a different payment method.",
+  "FEATURE_CAROUSEL_PREVIOUS" : "previous featured products",
+  "EDD_INSTALLATION_SERVICES_hasDeliveryAll" : "Delivery of all appliances",
+  "ACCOUNTADMIN_REMOVE_BUTTON" : "Remove Person",
+  "ERR_REQUIRED_PT_GENDER" : "Select a Gender",
+  "_ERR_PAYMENT_METHOD_UPDATE" : "We're sorry, there was an error while saving the payment method to your account.  Please try again later or contact Customer Service.",
+  "ERR_INVALID_MEMBERSHIP_BD" : "<div class=\"h8-style-guide error-membership\">Enter a valid membership number.</div>",
+  "ERR_COSTCO_PAY_MISMATCH_FOB_NUM" : "The Fob Numbers do not match.",
+  "RWD_VENDOR_CTA_BUTTON_TEXT_ORDER_HERE" : "Order Here",
+  "EDD_INSTALLATION_SERVICES_zip_may_take_1_wk_longer" : "Delivery of all appliances (your zip code may take 1 week longer)",
+  "NO_OF_ITEMS" : "Items",
+  "COSTCO_REMOVE" : "Remove",
+  "CART_REMOVE_RENEWAL_WARNING_MODAL_Label" : "Remove Renewal",
+  "_ERR_INVALID_AMEX_SELECTEDCARDTYPE" : "Costco no longer accepts American Express. Please provide a new payment method to continue.",
+  "MEMBERAPPLICATION_AFFILIATEHOUSEHOLD__Grey1_Text" : "Add a Person within Household",
+  "ZIPCODE_DELIVERY_ALERT_HEADER" : "Delivery Zip Code Alert",
+  "CMPP_LANDING_RESULTS_PAGE_DISPLAY_TITLE" : "Member Prescription Program Prices",
+  "ERR_INVALID_PHONE_NUMBER" : "Phone number must contain 10 digits.",
+  "EARLIEST_DELIVERY_ON_TEXT" : "Earliest",
+  "ERR_NO_RETURN_UNTIL_SHIPPED" : "Item cannot be returned until it has shipped",
+  "ERR_REQUIRED_DRUG_ALLERGIES" : "Select or type one or more drug allergies.",
+  "ERR_DECLARATION_COPY_REQUIRED" : "Select the checkbox to continue.",
+  "ERR_REQUIRED_MEDICAL_CONDITIONS" : "Select or type one or more medical conditions.",
+  "OFFSCREEN_ERROR" : "Error:",
+  "REMOVE_DEPENDENT_BUTTON" : "???REMOVE_DEPENDENT_BUTTON???",
+  "SEARCH_ADD_TO_CART_FOR_PRICE" : "Add for Details",
+  "ERR_REQUIRED_PRIVACY_ACKNOWLEDGE" : "You must agree to the Costco Health Center Notice of Privacy Practices.",
+  "ERR_EQUAL_EMAIL" : "Please enter the same email address.",
+  "CHANGE_EMAIL_NOTIFICATION_TITLE" : "Change Email Address",
+  "ADD_ITEM" : "Add Item",
+  "ERR_REQUIRED_MEMBER_ID" : "Member ID is required.",
+  "SCHED_DELIV_PARTS_SERVICES_HEADING" : "Parts and Services",
+  "ERR_ADULT_DOB" : "You must be at least 18 years old to purchase a membership.",
+  "ERR_USERNAME_REQUIRED" : "Please enter your name.",
+  "SCHED_DELIV_CANT_DELIVER_TOP_ERROR" : "One or more items need your attention. Review the message for the item(s) below.",
+  "VIEWCART" : "View Cart",
+  "GROCERY_ITEM_UNAVAILABLE_TITLE" : "Item  Unavailable",
+  "BACKORDER_TEXT_PART_MSG1" : "Some models/styles for this product are backordered, and are expected to ship within the next {0} week(s).",
+  "ERR_YPC_LAST_NAME" : "Last name is required.",
+  "BACKORDER_TEXT_PART_MSG2" : "Some models/styles for this product are backordered, and are expected to ship on {0}.",
+  "BACKORDER_TEXT_PART_MSG3" : "Some models/styles for this product are backordered, and are expected to ship between {0} and {1} week(s).",
+  "ADDRESS_TITLE" : "Add New Address",
+  "BACKORDER_TEXT_PART_MSG4" : "Some models/styles for this product are backordered, and are expected to ship between {0} and {1}.",
+  "BACKORDER_TEXT_PART_MSG5" : "Some models/styles for this product are backordered.",
+  "ERR_YPC_MEMBERSHIP_NUMBER" : "Membership number is required.",
+  "RETURN_ACTION_REPLACE_CONTENT" : "We'll send you a replacement of the item you ordered to the original shipping address.",
+  "ERR_REQUIRED_LAST_NAME" : "Last Name is required.",
+  "PDETAIL_FSA" : "FSA Eligible Item",
+  "EDD_INSTALLATION_SERVICES_gas" : "Hookup of gas appliances",
+  "SMART_APP_VIEW" : "DOWNLOAD",
+  "ERROR_CARD_MASTERPASS" : "The card selected from your Masterpass account is not accepted by Costco. Select a different card using Masterpass or choose a different payment method.",
+  "EDD_INSTALLATION_SERVICES_isCa" : "In California, gas dryer installations in a garage may require a mechanical code permit and must be at least 18 inches off the ground",
+  "RWD_GIFT_SUBTITLE" : "Add an optional message to eligible items in your order. You may only have one gift message per delivery address, per order.",
+  "RENEW_UPGRADE__AutoRenewHeader" : "Auto Renew",
+  "SAVE_CHANGES" : "Save Changes",
+  "EDD_INSTALLATION_SERVICES_has_no_gas_hookup" : "No hookup of gas appliances based on local regulations or coverage area (haul-away only when uninstalled by member)",
+  "ERR_MYACCOUNT_ADDRESSBOOK_EDIT_MISSING_INFORMATION" : "Please correct the following:<br>Please complete the information identified below in red.\"",
+  "TICKET_OPS_TIME_EXPIRED" : "Time Expired ",
+  "JS_VALID_EQUALTO" : "Please enter the same value again.",
+  "LEAVE_PAGE_BUTTON" : "Leave Page",
+  "SHIP_RESTRICTION_ERROR_KEY_CA" : "???SHIP_RESTRICTION_ERROR_KEY_CA???",
+  "ACCOUNTADMIN_REMOVE_PERSONAL_TITLE" : "Remove Account Manager",
+  "EDD_DELIVERED_ON_TEXT" : "Estimated delivery",
+  "ACCOUNT_RENEW_MEMBERSHIP_ADDED_AUTO_RENEW" : "You have successfully set up membership auto renewal. The change will take effect within the next two business days.",
+  "OUT_OF_STOCK_TOOLTIP" : "currently not available",
+  "CHECKOUT_DELIVERY_ReciptentLastNameRequred" : "Please enter recipient's last name",
+  "ERR_CONFIRM_MEMBERSHIP_NUMBER" : "Confirm Membership number is required.",
+  "ERR_INVALID_EMAIL_ADDRESS" : "Enter a valid email address.",
+  "ERR_PONUM_REQ" : "Enter the PO Number.",
+  "ACTION_ORDER_PICKUP" : "ORDER PICKUP",
+  "DESELECT_PRESCRIPTION_IN_BASKET" : "The prescription(s) have been deselected. Continue to your cart to complete checkout for {0}’s prescriptions.",
+  "MEMBERSHIP_VALIDATION_LinkMembershipToReorderModal_Title" : "Link Membership to Reorder",
+  "EDD_GUARANTEE_PRECONDITION" : "The Delivery Agent will contact you to schedule an appointment once the product arrives at their terminal, which will be approximately 48-72 hours prior to delivery.",
+  "RWD_CHECKOUT_TOOLTIP_TEXT" : "The CVV code is the 3-digit security code on the back of your credit card.",
+  "ERR_INVALID_POBOX" : "PO Boxes are not accepted.",
+  "ACCOUNT_PAYMENT_METHODS_ERR_INVALID_DATE" : "Please enter a valid expiration date in format MM/YY.",
+  "JS_DIALOG_CONFIRM_TITLE" : "Confirm your action",
+  "ERR_REQUIRED_LOGON" : "Email address is required",
+  "MEASUREMENT_GUIDES_CHECK_ERROR" : "Check the box to confirm and continue.",
+  "ADDRESS_BOOK_SORT_FIRST_A_TO_Z" : "First Name (A-Z)",
+  "SHIP_PAD_MSG_NO_AVAIL" : "No dates are available, please select another shipping method.",
+  "SHOW_ADDITIONAL_TIRE_FEE_DETAILS" : "???SHOW_ADDITIONAL_TIRE_FEE_DETAILS???",
+  "EDD_INSTALLATION_SERVICES_hasElectricalHookupNoBuiltIn" : "Hookup of electric appliances (built-ins excluded)",
+  "ERR_YPCNM_LAST_NAME" : "Last name is required.",
+  "COSTCO_PAY_FOB_ADDED_CONFIRM_MODAL_TITLE" : "Fob Added",
+  "ERR_INVALID_MEMBERSHIP_NUMBER" : "Invalid membership number.",
+  "TOBACCO_CONFIRM_YOUR_ACTION" : "Confirm Your Action",
+  "COSTCO_PAY_PAYMENT_REMOVE_MODAL_BODY" : "<p>Are you sure you want to remove this card?</p> Removing this card will deactivate all Fobs associated with your account until a new payment method is added.",
+  "LTL_CANCEL_SUBMIT_TEXT" : "Submit Return Cancellation Request",
+  "ERR_INVALID_EXTN_NUMBER" : "Please enter a valid Extn number",
+  "SFL_MOVED_TO_THE_CART" : "{0} moved to the cart",
+  "CMPP_CAROUSEL_PREVIOUS" : "Previous new products to CMPP",
+  "ERR_REQUIRED_GROUP_NUMBER" : "Group # is required.",
+  "LIST_SAVE_ANNOUNCER_MSG" : "List changes saved",
+  "ERR_REQUIRED_PT_LAST_NAME" : "Patient Last Name is required",
+  "CVV_NOTAMEX_IMAGE" : "Checkout_CVV_Other.gif",
+  "LISTS_EDIT_LIST" : "Edit List",
+  "JS_DIALOG_VIST_EXT" : "Visiting External Link",
+  "ERR_REQUIRED_PASSWORD" : "Please enter a password.",
+  "CART_REMOVE_RENEWAL_WARNING_MODAL_Keep_Renewal_Button_Text" : "Keep Renewal",
+  "ERR_COSTCO_PAY_MAXLENGTH_FOB_NAME" : "Costco Pay Fob Name has to be less than 50 character",
+  "ERR_REQUIRED_MEDICATIONS_V2" : "Enter current medications",
+  "MEASUREMENT_GUIDELINES" : "Delivery Guidelines",
+  "ERR_INVALID_MEMBERSHIP_FEE" : "Please provide a valid membership renewal amount from your membership renewal statement.",
+  "RWD_SEARCH_RESULT_LIST" : "Showing {0}-{1} of {2}",
+  "ERR_ENTER_LISTNAME" : "Please enter a valid List name.",
+  "ERR_PICKUP_SERVICE" : "We are currently experiencing technical difficulties with the placement of your order. We apologize for the Inconvenience. Please try again later.",
+  "ZIPCODE_SELECTOR_CHANGE_DELIVERY_QUESTION1" : "Are you sure you want to change your delivery ZIP code?",
+  "ZIPCODE_SELECTOR_CANCEL_BUTTON" : "Cancel",
+  "CHANGE_ZIP_CODE" : "Change Zip Code",
+  "ITEMS_DESELECTED_RESALE" : "All items have been deselected for resale.",
+  "MY_ACCOUNT_PAYMENT_METHOD_AUTO_RENEW_MODAL_RIGHT_TEXT" : "<p>Membership fees will be charged based on your membership plus applicable taxes.</p><p>Accepted Cards:<br/>- Visa Credit Cards<br/>- Visa Signature Debit</p>",
+  "PDP_REDESIGN_V2_ONE_ITEM_SR_TEXT" : "Additional Image",
+  "ERR_REQUIRED_PT_FIRST_NAME" : "Patient First Name is required",
+  "ERR_REQUIRED_REGISTER_PASSWORD" : "Password is required",
+  "PDETAIL_NOTIFY_ME_SUCCESS_MSG" : "Your notification preferences have been saved.",
+  "JS_VALID_NUMBER" : "Please enter a valid number.",
+  "RWD_WISH_LIST_CONFIRM_TITLE" : "Item Added to Wish List",
+  "SCHED_DELIV_DATE_REQUIRED" : "\"Delivery Date is required\";",
+  "RETURN_ACTION_REFUND" : "Refund",
+  "RETURN_UPS_METHOD_PICKUP_DESC" : "UPS will pick up the packaged item(s) from:",
+  "RETURN_UPS_MANDATORY" : "Please select UPS dropoff or pick up for your item(s).",
+  "ERR_REQUIRED_COSTCO_BD_MEMBERSHIP_NO" : "Membership number is required for purchase.",
+  "CART_POPUP_CANCEL" : "Cancel",
+  "PDETAIL_LESS_TEXT" : "Less",
+  "ERR_ACH_NAME_REQ" : "Name of account holder is required.",
+  "ADDITIONAL_FEES" : "Additional Fees",
+  "PDETAIL_VIEW_LARGER_IMAGE" : "View Larger Image",
+  "OUT_OF_STOCK_TEXT" : "Not Available",
+  "ERR_MYACCOUNT_ADDRESSBOOK_EDIT_INVALID_PHONE" : "You have entered an invalid phone number. Please correct your entry to continue.",
+  "ERR_INVALID_STREET_REQUIRED" : "Street address is required.",
+  "RESALE_LICENSE_MODAL_TITLE" : "Resale Membership",
+  "SAMEDAY_NOT_AVAILABLE" : "???SAMEDAY_NOT_AVAILABLE???",
+  "DELIVERY_SERVICES_INCLUDED_TITLE" : "Included Services",
+  "EDD_INSTALLATION_SERVICES_hasGasHookup" : "Hookup of gas appliances",
+  "MY_ACCOUNT_PAYMENT_METHOD_AUTO_RENEW_MODAL_CHANGE_CARD_TITLE" : "Change Card for Auto Renew",
+  "EDD_UNKNOWN_ERROR" : "We're sorry, we are unable to determine availability. Please try again at a later time. ",
+  "ERR_REQUIRED_ORIGINAL_PRESCRIPTION" : "Do you have a written prescription? Check one option below",
+  "REASONCODE_KEY9" : "My shipment is Lost",
+  "ACCOUNT_RENEW_MEMBERSHIP_UNVERIFIED_MembershipNumberInvalid_Text" : "Please enter a valid membership number.",
+  "ADDTOCART_DETAILS" : "Add for Details",
+  "CHANGE_EMAIL_NOTIFICATION_TEXT" : "Updating your email address will change the email used for sign in on costcobusinessdelivery.com and where you receive exclusive offers and member benefits.",
+  "REASONCODE_KEY3" : "Both Item & shipping box are damaged",
+  "JS_VALID_RANGELENGTH" : "Please enter a value between {0} and {1} characters long.",
+  "REASONCODE_KEY4" : "Defective",
+  "REASONCODE_KEY1" : "???REASONCODE_KEY1???",
+  "REASONCODE_KEY2" : "Incorrect Item",
+  "RWD_MYACCOUNT_EDIT_EMAIL" : "Edit Email Address",
+  "REASONCODE_KEY7" : "Not Satisfied with the item",
+  "REASONCODE_KEY8" : "Purchased by mistake",
+  "ERR_DEPENDENT_AGE" : "Users over 16 years of age may not be added to your account as a dependent at this time.",
+  "REASONCODE_KEY5" : "???REASONCODE_KEY5???",
+  "RWD_GET_EMAIL_OFFERS" : "Get Email Offers",
+  "ERR_ADD_TO_CART_INVALID_QTY" : "Quantity must be {0} or more to add to cart.",
+  "REASONCODE_KEY6" : "Duplicate Item",
+  "JS_DIALOG_AUTHORIZED_USER_INTRO" : "<p>You are leaving Costco.com to apply for <span class=\"visa-bold\">The Costco Anywhere Visa&#174; Card</span> by Citi on a website hosted by Citi.</p><p>This Costco.com page will remain open in your browser so that you can return easily.</p><p>As an option, you may add a household member as an Authorized User on your Costco Anywhere Card application; you may add additional Authorized Users during the application process.  You must pay Citi  for all charges made or allowed by Authorized Users, if approved. To select a household member below, you must have their permission to share their information with Citi.</p>",
+  "ACCOUNT_RENEW_MEMBERSHIP_Membership_Information_Text" : "Membership Information",
+  "PRESCRIPTION_STATUS_DESC__AwaitingPayment" : "???PRESCRIPTION_STATUS_DESC__AwaitingPayment???",
+  "COSTCO_PAY_PAYMENT_REMOVE_MODAL_TITLE" : "Remove Card",
+  "ERR_INVALID_PHONE1" : "Please enter a valid phone number.",
+  "RETURN_UPS_PICKUP" : "UPS Pick Up",
+  "CHECKOUT_PREAUTH_MSG" : "Pre-authorization Charges",
+  "ERR_REQUIRED_PHYSICIAN_CITY" : "Please enter a valid city.",
+  "JS_DIALOG_ACCEPT" : "Accept",
+  "COSTCO_PAY_PAYMENT_REMOVE_MODAL_PRIMARY" : "Remove Card",
+  "ERR_ENTER_ZIPCODE_NEW" : "ZIP Code is required.",
+  "ERR_UNCHECK_NO_REORDER_PRODUCTS" : "Deselect Items Not Eligible For Reorder",
+  "LINK_MEMBERSHIP_TITLE" : "Link Membership",
+  "COSTCO_PAY_FOB_ADDED_CONFIRM_MODAL_PRIMARY" : "Done",
+  "COMMUNICATION_PREFERENCES_ERROR_MESSAGE" : "Update failed. Try later.",
+  "CART_REMOVE_RENEWAL_WARNING_MODAL_POST_LOCKDOWN_Body_Text" : "Are you sure you want to remove your renewal? A Costco membership is required to checkout. A membership is not required for pharmacy prescription orders. Other exclusions may apply.",
+  "PDP_REDESIGN_V2_ADD_TO_BUNDLE" : "Add to Bundle",
+  "LIVE_TICKETS_CANCEL_ORDER_MODAL_TEXT" : "Are you sure you want to cancel your Costco Live Tickets order?",
+  "_ERR_GENERIC_SAVE_COMMUNICATION_PREFERENCES" : "We are experiencing system issues and some functionality may not be available. Your changes have not been saved. Please try again later.",
+  "MY_ACCOUNT_PAYMENT_METHOD_AUTO_RENEW_MODAL_REMOVE_TEXT" : "Are you sure you want to remove this card from your membership?",
+  "MA_CREATELIST" : "Create List",
+  "PRESCRIPTION_DETAIL__Delivery_Self_Checkout" : "???PRESCRIPTION_DETAIL__Delivery_Self_Checkout???",
+  "LINK" : "link",
+  "RWD_SHIPPING_AND_HANDLING_INCLUDED" : "Shipping & Handling Included",
+  "ERR_ONETRUST_SYSTEM_DOWN_BODY" : "The cookie settings tool is currently unavailable. Please try again later.",
+  "RETURN_ACTION_REPLACE_SELECTED" : "Replace with the same item",
+  "ERR_REQUIRED_FIRST_NAME" : "First Name is required.",
+  "EDD_INSTALLATION_SERVICES_has_delivery_all" : "Delivery of all appliances",
+  "SAMEDAY_AVAILABLE" : "???SAMEDAY_AVAILABLE???",
+  "EDITHOUSEHOLD_TITLE" : "Edit Person Within Household",
+  "ERR_INVALID_CITY_REQUIRED" : "City is required.",
+  "VIEW_LIST" : "View List",
+  "ACCOUNT_RENEW_MEMBERSHIP_UNVERIFIED_LastNameMissing_Text" : "Please enter your last name.",
+  "CART_REMOVE_MEMBERSHIP_WARNING_MODAL_Body_Text" : "Are you sure you want to remove this membership? If you remove this membership, you will be assessed a 5% non-member surcharge on your order(does not apply to pharmacy prescription orders).",
+  "JS_VALID_REQUIRED" : "This field is required",
+  "ERR_EXPMON_REQ" : "Please enter an expiration month.",
+  "COSTCO_GROCERY_MINIBANNER" : "<span class=\"grocery-head-small\">2-Day Delivery</span>",
+  "FEATURE_CAROUSEL_OWL_DOT_LABEL" : "featured content {0} of {1}",
+  "ERR_NAME_REQ" : "Please enter a name.",
+  "EDIT_PAYMENT_METHOD" : "Edit Payment Method",
+  "ERR_INVALID_ZIP_EDD" : "We do not offer delivery to your zip code",
+  "ERR_REQUIRED_MEDICATIONS" : "Type one or more medications.",
+  "ERR_INVALID_COUNTRY" : "Please select a country name."
+};
+				</script>
+
+
+    <script type="text/javascript">
+
+	var wcs = wcs ? wcs : {};
+	wcs.langId = '-1';
+	wcs.storeId = '10301';
+	wcs.catalogId = '10701';
+	wcs.jsAssetsPath = '/wcsstore/CostcoGLOBALSAS/';
+	wcs.productBaseURL = 'https://www.costco.com/productdisplay';
+	wcs.globalImagePath = '/wcsstore/CostcoGLOBALSAS/';
+	wcs.locale = 'en_US';
+	wcs.DATE_FORMAT = 'mm/dd/yy';
+	wcs.loginTimeOut = '3600000';
+	wcs.ajaxTimeout = 800000;
+	wcs.domain = '.costco.com';
+	wcs.isPharmacy =  'false';
+
+	var SYSTEM_CALC_DISTANCE_UNIT_OF_MEASURE = 'SMI';
+
+
+	var urlWhitelist = ["costco.com","costco.ca","costcobusinessdelivery.com","costcobusinesscentre.ca","costco.co.uk","costco.is","costcotravel.com","costcotravel.ca","costcophotocenter.com","egain.net","costcoconnection.com","costcophotocentre.ca","weathertech.ca","centah.com","auventsmultiples.com","getmoreofwhatyoulove.ca","kronostm.com","naturesdomainpetfood.com","costcophotocenter.com","great-pet-supplies.com","primus.ca","easy2.com","flixmedia.eu","payweb.ca","inovainc.ca","avis.ca","ship.emergeit.com","costcoauto.ca","cubeit.ca","culliganwaterdelivery.ca","aisle7.net","CostcoHealthSolutions.com","costco.mobilepharmacyhelp.com","flixcar.com","livraisonculligan.ca","spotify.com","customerservice.costco.com", "customerservice.costco.ca", "google.com","apple.com", "ess.costco.com","costco.co.kr","hlserve.com","costco.com.tw","accountonline.com","citicards.com","liveclicker.com","costcoholidaysavingsbook.com","remscripts.com","web.remscripts.com","mscripts.com","costcobusinessprinting.com","costcobusinessprinting.ca","costco.co.jp","medrefill.com","costcotireshosting.com","costco.page.link","azurewebsites.net","costco.fr","costco.es","costconext.com","costco.co.nz","ocuco.com","ct-costco.com", "att.com"];
+
+
+	var urlWarnOncePerSessionList = ["//www.myregistry.com"];
+
+	var cookies = {
+		CART_COUNT_COOKIE : "cartCountCookie",
+		SELECTED_LANG_COOKIE : "selectedLanguage",
+		SELECTED_LANG_EXPIRES : "7",
+		SELECTED_REGION_COOKIE : "C_LOC",
+		SELECTED_REGION_EXPIRES : "365",
+		GROCERY_REGION_COOKIE : "C_2LOC",
+		INV_CHECK_POSTAL_CODE_COOKIE : "invCheckPostalCode",
+		INV_CHECK_STATE_CODE_COOKIE: "invCheckStateCode",
+		WAREHOUSE_COOKIE: "WAREHOUSEDELIVERY_WHS",
+		STORELOCATION_COOKIE: "STORELOCATION"
+
+	};
+
+	var isBDApplication = 'BC';
+	if (isBDApplication === 'BD') {
+		var constants = {
+			MAX_ITEM_QUANTITY : 9999
+		};
+	}else{
+		var constants = {
+		MAX_ITEM_QUANTITY : 999
+		};
+	}
+	var shippingCountries = ['US'];
+	var billingCountries = ['US','CA'];
+	var cookiesDisabledUrl = 'https://www.costco.com/cookies-disabled.html';
+
+	if (typeof checkCookieEnablement === "undefined") {
+		function isCookieSupported() {
+			var persist= true;
+			do {
+				var rand = Math.floor(Math.random()*100000000);
+				var c= 'gCStest='+rand;
+				document.cookie= persist? c+'; expires=Tue, 01-Jan-2030 00:00:00 GMT' : c;
+				if (document.cookie.indexOf(c)!==-1) {
+					document.cookie= c+'; expires=Sat, 01-Jan-2000 00:00:00 GMT';
+					return persist;
+				}
+			} while (!(persist= !persist));
+			return false;
+		}
+
+		function checkCookieEnablement() {
+			if (!isCookieSupported() && window.location.href.indexOf('cookies-disabled') < 0) {
+				window.location.replace(cookiesDisabledUrl);
+			}
+		};
+	}
+
+	checkCookieEnablement();
+	//Enable Grocery Feature Feature. Used for BC only.
+	var validateGroceryDeliveryZip = false;
+	var groceryEligRgns = '';
+	var samedayLink = '';
+	//STRY0160243-Flag to enable/disable CA instacart
+	var instaCartCAEnabled='false';
+	if (!(isBDApplication == 'BD')){
+	    var groceryEligRgns ='';
+     	var validateGroceryDeliveryZip = 'true';
+     	var globalMiniBannerFlag = '1';
+     	 samedayLink = 'a[href*="sameday.costco.com"]';
+     	 instaCartCAEnabled='true';
+     	 	var numberOfBatchApiIds = '50';
+     	 	var isPDPVariantGreyOutEnabled = 'true';
+	}
+	var groceryEnabled = true;
+
+	var memberValidationBypassFeatureEnabled = true;
+
+	//member-only purchase store feature (true|false)
+	var memberOnlyFeatureEnabled = false;
+
+	var globalPoNote = '';
+
+	var costcoStoreFeatures = {"WEBSITE_REDESIGN_V2_CHECKOUT_FEATURE_ENABLE":true,"OCUCO_LOGOUT_ENABLED":false,"SMALLPACK_EDD_ENABLED":true,"WEBSITE_REDESIGN_V2_CART_OPTIONS_FEATURE_ENABLED":false,"WEBSITE_REDESIGN_V2_CATEGORY_FEATURE_ENABLE":true,"RECAPTCHA_SERVER_VALIDATION_ENABLED":false,"COUNTRY_SELECTION_FLAG":true,"VALIDATE_WHS_ON_PLACE_ORDER":false,"EDD_GROCERY_ENABLED":false,"SMS_NOTIFICATION_FEATURE_ENABLED":true,"SAVE_FOR_LATER_FEATURE_ENABLED":true,"CLICKPAY_SRC_ENABLED":true,"MASTERPASS_ONLINE_ENABLED":false,"DMC_ENABLED":true,"CREDIT_CARDS_LOGO_REORDER_FEATURE_ENABLED":true,"DMC_PAYMENT_ENABLED":true,"ND_CONTRACTS_CRITEO_STORE_FLAG":false,"IS_BD_NAV_FLYOUT_FILTER_BY_CONTRACT_ENABLED":false,"ENABLE_TRANSFER_PRESCRIPTION":true,"BES_FRAUD_CHECK_LOG_SERVICE_REQUEST_FEATURE":true,"TEST_AUTO_RENEW_EXPIRATION_DATE_ENABLED":false,"SSO_KMSI_REDIRECT":true,"COMING_SOON_FEATURE_ENABLED":true,"ORDER_SHIPMENT_FEATURE":false,"DMC_EPR_ENABLED":true,"UPSMI_ENABLED":true,"DMC_CITI_CUSTOM_SESSION_ENABLED":true,"OCUCO_NON_MEMBER_CHECKOUT_ENABLED":true,"TIRES_TPMS_FEE_ENABLED":true,"COOKIE_COMPLIANCE_FEATURE":true,"LIVE_TICKETS_ENABLED":true,"DMC_CITI_JWT_PRINT_ENABLED":true,"DMC_SHA_256_ENABLED":true,"DCA_REACT_ENABLED":false,"DMC_REWARD_ESTIMATE_ENABLED":true,"WINDSOR_ANALYTICS_FEATURE":true,"LIVE_TICKETS_INTERFACE3_CHECK_LOG_SERVICE_FEATURE":true,"TIRES_DYNAMIC_DELIVERY_DATE_ENABLED":true,"DMC_REGISTER_ENABLED":true,"CITI_OAUTH_CACHED":true,"PREVENT_SAME_ADDRESS_AS_WAREHOUSE_ENABLED":true,"SHIPPING_EVENTS_ENABLED":false,"TIRE_SMS_NOTIFICATION_FEATURE_ENABLED":false,"LIVE_TICKETS_DUAL_CART_ENABLED":true,"GAS_PRICE_ENABLED_LOCATOR":true,"BES_FRAUD_CHECK_USE_TEST_DATA_FEATURE":false,"ONETRUST_CROSS_DOMAIN_CONSENT":false,"IS_LANGAUGE_DROP_DOWN_ENABLED":false,"ACCERTIFY_3DS_ENABLED":false,"BALIBLINDS_FEATURE_ENABLED":true,"VISA_CHECKOUT_ENABLED":false,"CART_MINIBANNER_BC_ONLY_FEATURE_ENABLED":true,"PHARMACY_FAMILY_ACCOUNT_ENABLED":true,"USE_SOLR_FOR_PRODUCT_SITEMAP":false,"DMC_CITI_OAUTH_ENABLED":true,"WEBSITE_REDESIGN_V2_CART_FEATURE_ENABLE":true,"WEBSITE_REDESIGN_V2_ITEM_DELIVERY_OPTIONS_FEATURE_ENABLED":true,"CABD_SEGMENTED_DELIVERY_FEATURE":false,"LANGUAGE_PREFERENCE_ENABLED":false,"WEBSITE_REDESIGN_V2_ORDER_LEVEL_DELIVERY_OPTIONS_FEATURE_ENABLED":false,"USE_CARD_FOR_AUTO_RENEW":true,"WEBSITE_REDESIGN_V2_ORDER_DELIVERY_SURCHARGE_FEATURE_ENABLED":false,"VALIDATED_AUTO_RENEW_FLOW_ENABLED":true,"DMC_CLIENT_REGISTRATION_AUDIT_LOGGING":true,"ORD_DISCLAIMER_FEATURE":true,"WEBSITE_REDESIGN_V2_PDP_FEATURE_ENABLE":true,"USE_ACTIVITY_COOKIE_FOR_ACTIVE_SESSION":false,"ENABLE_PHARMACY_CONTACTUS_EMAIL":false,"STORE_RDI_ON_BC_ENABLED":true,"SSO_KMSI":true,"COT_STORE_FLAG":true,"RESALE_FEATURE_ENABLED":false,"FSA_CATEGORY_CODE_ENABLED":false,"LIVE_TICKETS_PAYMENT_AUTH_SUCCESS_CODES_FEATURE":true,"CA_PHARMACY_FAX_NUMBER_FEATURE":false,"GE_RESPONSE_CACHEING_ENABLED":true,"WEBSITE_REDESIGN_V2_CHECKOUT_AJAX_FLOW_FEATURE_ENABLE":false,"PRIMARY_PARENT_CATEGORY_FEATURE":false,"SELF_SERVICE_ITEM_CANCEL_FEATURE":true,"CART_HEADER_SURCHARGE_NOTIFICATION_FEATURE_ENABLED":false,"DMC_OTP_BYPASS":false,"DMC_PROMO_ENABLED":true,"EDD_SWITCH":true,"PAYINSTRUCTION_CLEANUP_ENABLED":false,"AUTO_RENEW_ENABLED":true,"DMC_J2C_CREDENTIALS_ENABLED":true,"DMC_PAYMENT_SEGMENTATION_ENABLED":false,"PHARMACY_FAMILY_ACCOUNT_ADD_DEPENDENT_ENABLED":true,"PREFER_SERVER_JDBC_HELPER":true,"WEBSITE_REDESIGN_V2_CHECKOUT_CUSTOMER_PO_NOTES_FEATURE_ENABLED":false,"DMC_SEGMENTATION_ENABLED":false,"SORT_MEGA_MENU_CATEGORIES_ALPHABETICALLY":false,"ENABLE_VISA_FOR_CA":false,"EXPRESS_CHECKOUT_ENABLED":true};
+
+	var numberOfOptionsToDisplayAsTiles = 20;
+
+</script>
+    <script src='/wcsstore/builds/3.0.64412.0/RWDStaticAssets/js/built/all.min.js'></script>
+
+    <!-- START SeoMetaData.jsp -->
+    <meta http-equiv="content-language" content="en-us"/>
+    <meta name="currentBuildNumber" content="3.0.64412.0" />
+    <meta name="currentSolrBuildNumber" content="3.0.33624.0" />
+    <meta name="ServerName" content="www.costco.com " />
+    <meta name="LocalAddress" content="xxx.xxx.xxx.89" />
+
+
+    <meta name="LocalName" content="TP238" automation-id="metadataLocalName"/>
+    <meta name="google-site-verification" content="" />
+
+
+    <link rel="icon"  type="image/vnd.microsoft.icon" href="/wcsstore/CostcoGLOBALSAS/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon"  type="image/vnd.microsoft.icon" href="/wcsstore/CostcoGLOBALSAS/images/favicon.ico" type="image/x-icon">
+
+
+    <meta name="description" content="&lt;p&gt;Shop Costco.com for electronics, computers, furniture, outdoor living, appliances, jewelry and more. Enjoy low warehouse prices on name-brands products delivered to your door.&lt;/p&gt;
+"/>
+
+    <meta name="keyword" content="USBC, , Appliances, Baby, Beauty, Clothing, Luggage &amp; Handbags, Computers, Costco Next, Electronics, Floral &amp; Gift Baskets, Furniture, Gift Cards &amp; Tickets, Gourmet Foods, Grocery, Household Essentials &amp; Pet, Health &amp; Personal Care, Holiday &amp; Seasonal, Home &amp; Installation Services, Home &amp; Kitchen, Home Improvement, Jewelry, Watches &amp; Sunglasses, Mattresses, Office Products, Patio, Lawn &amp; Garden, Special Events, Sports &amp; Fitness, Tires &amp; Auto, Toys &amp; Books, View More Categories, &lt;p&gt;Shop Costco.com for electronics, computers, furniture, outdoor living, appliances, jewelry and more. Enjoy low warehouse prices on name-brands products delivered to your door.&lt;/p&gt;
+"/>
+
+    <!-- END SeoMetaData.jsp --><!--[if lt IE 9]>
+    <script src="/wcsstore/RWDStaticAssets/js/polyfill/html5shiv.min.js"></script>
+    <script src="/wcsstore/RWDStaticAssets/js/polyfill/respond.min.js"></script>
+    <script src="/wcsstore/RWDStaticAssets/js/polyfill/ie8polyfills.js"></script>
+    <![endif]-->
+
+
+    <style>
+  body {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+  }
+</style>
+
+    <link as="style" rel="preload" href="/wcsstore/builds/3.0.64412.0/RWDStaticAssets/css/rwd.app.min.css">
+    <script>
+		  function loadDeferredStyles() {
+		      try { var l = document.createElement('link');
+		      var head = document.getElementsByTagName('head')[0];
+		      l.type = 'text/css'; l.rel = 'stylesheet'; l.href = '/wcsstore/builds/3.0.64412.0/RWDStaticAssets/css/rwd.app.min.css';
+		      l.onload = function() {
+		      	window.stylesLoaded = true;
+		      	var event = document.createEvent('Event');
+		      	event.initEvent("styles-loaded", true, true);
+		      	document.dispatchEvent(event);
+		      }
+		      head.appendChild(l);
+		    } catch (err) { begin_load() }};
+		  function begin_load() {
+		    try { var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+		      webkitRequestAnimationFrame || msRequestAnimationFrame;
+		    if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+		    else window.addEventListener('load', loadDeferredStyles);
+		    } catch (err) { window.setTimeout(loadDeferredStyles, 0);}
+		  }; begin_load();
+		</script>
+
+    <script>
+		var oneTrustLoadError = false;
+		var optanonOnPageLoad=true;
+
+		function displayOneTrustSystemDownErrorModal(){
+			COSTCO.dialog.createExtDialogBox({
+		        title: messages.ERR_ONETRUST_SYSTEM_DOWN_TITLE,
+		        body: messages.ERR_ONETRUST_SYSTEM_DOWN_BODY,
+		        primary: messages.CLOSE,
+		        primary_event: function primary_event() {
+		          COSTCO.dialog.close();
+		        }
+		      });
+		}
+		function verifyOTSystemDown(event){
+			if(oneTrustLoadError){
+				displayOneTrustSystemDownErrorModal();
+				event.preventDefault();
+			}
+		}
+	</script>
+
+    <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="2653cf4b-5c84-40d7-a99b-fa6e1592503b" data-document-language="true" onerror="oneTrustLoadError=true;" ></script>
+
+    <script type="text/javascript">
+	    		function OptanonWrapper(){
+	    			$("#onetrust-banner-sdk").attr("tabindex","-1");
+	                $("#onetrust-pc-btn-handler").appendTo("#onetrust-button-group");
+					$("#title-container .title").removeClass("hide");
+	    			if(optanonOnPageLoad){
+	    				optanonOnPageLoad = false;
+	    				let optStatus = OneTrust.GetDomainData().ConsentIntegrationData.consentPayload.purposes[3].TransactionType;
+	    				let html = '<p>Some features have been disabled because Personalized Advertising is turned off in your cookie settings. <a tabindex="0" role="button" class="ot-sdk-show-settings" onclick="verifyOTSystemDown(event);">Update your cookie settings</a><p>You can still search for warehouse locations using the the button below.</p></p>'
+	    					+'<input id="findWarehouseBtn" class="primary-button-v2 col-xs-3" type="button" value="Find a Warehouse" onclick="COSTCO.Locator.showWarehouseFlyout()" automation-id="findWarehouseBtn" style="float:left; width:auto">'
+	    				if(optStatus === 'OPT_OUT') {
+	    					$("#map-container").remove();
+	    					$("#list-column").removeClass().addClass("col-md-12 col-xl-6");
+	    					OneTrust.InsertHtml(html,'list-column',null,{deleteSelectorContent: true,makeSelectorVisible:true},'4');
+	    				}
+	    			}else{
+	    				location.reload();
+	    			}
+	    		}
+	    	</script>
+
+    <script type='text/javascript' src="//assets.adobedtm.com/6d09a901247b3615ff6f4d9f22bda8ea810f369e/satelliteLib-5fef5b4a6450b6581f6444686d6f174427a7a108.js"></script>
+
+
+    <script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"true","rua.cpre":"true","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"SJ-717da74f-e587-4feb-941f-f81a582f15f3","rua.cook":"true","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch"}]);</script>
+    <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="3C8QM-XUE3B-96T5C-HYEN8-AAN34",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"3C8QM-XUE3B-96T5C-HYEN8-AAN34",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e="true"=="true"?1:0,t="cookiepresent",n="gopkl2ky3ue32za56ilq-f-51587eb58-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,_={"ak.v":"34","ak.cp":"543943","ak.ai":parseInt("192072",10),"ak.ol":"0","ak.cr":3,"ak.ipv":4,"ak.proto":"h2","ak.rid":"3e15fa2","ak.r":25841,"ak.a2":e,"ak.m":"a","ak.n":"essl","ak.bpcip":"51.158.165.0","ak.cport":33500,"ak.gh":"95.101.79.102","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"","ak.t":"1679684119","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==6+Zc5bEU73TngezjpQCbBlT8zLhuGPFzYvId1JOOdwARaL5tvigMXUlpw1+yHaf7bueY0CtbZan9Vpt7scg5atw5+B7QPEuMfyd1tnX1ysiO7Mh+Y6sNXPH5aqpo1+FTnYNzE2u1yIsX2aQdNNBtTVTOsl0ca7XM1gVEsk0hOGSf8nwU6sVTGshimQLU5wa5mhMyzqDznnFypbhZL0pGq1WzoeRgmC2ldg7p4T7Bfcsv221iRW0dQxYh9QLMbNRwaeNc72Lys4G50PrHNAqqpaUJCFVQYLg8ID13g900cZueVawcDnTD8w0OWOr2FR53a1AdHfuDpR40hOcvwgf7981pR8iIJxyfI+3lzki00Ki2jnZIECu06gxDl2JrxybRY0InOeJz5prcsZ3eb4eX9UyLJYseesk5DIC/2RN+SMA=","ak.pv":"324","ak.dpoabenc":"","ak.tf":i};if(""!==t)_["ak.ruds"]=t;var o={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))_["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:_,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a("before_beacon",o.av,null,null),a("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body>
+<script type="text/javascript">
+
+		//for IE console errors
+		if(!(window.console && console.log)) {
+			console = {
+				log: function(){},
+				debug: function(){},
+				info: function(){},
+				warn: function(){},
+				error: function(){}
+			};
+		}
+
+		var costcoloadstate = {
+			modules : false,
+			submodules : false
+		}
+
+		</script>
+<!-- Header -->
+<script src="/wcsstore/builds/3.0.64412.0/RWDStaticAssets/js/built/global.module.min.js" type="text/javascript" async defer></script>
+<!-- Navigation --><!-- Body -->
+<div id="headerskip" class="sr-only" tabindex="-1"></div>
+<main class="container-fluid fixed-container page account-layout">
+    <div class="row">
+        <div id="tiles-body-attribute" class="col-xs-12">
+            <div id="navigation-overlay-div-element" class="navigation-v2-shading" style="display:none;"></div>
+
+
+            <div class="row">
+                <div id="order-details-wrapper">
+                    <!-- Begin OrderDetails.jspf -->
+                    <div class="order-ajax">
+                        <!-- Begin - OrderDetailsInvoicePrint_Data.jspf --><!-- End - OrderDetailsInvoicePrint_Data.jspf -->
+                        <div id="order-details-print-bc">
+                            <!-- Begin OrderDetailsInvoicePrint_UI_BC.jspf --><!-- Adding new gatsby redirect -->
+
+                            <style type="text/css" media="print">
+	@page {size: landscape;}
+</style>
+
+                            <!-- Begin OrderDetailsInvoicePageHeader_UI_BC.jspf -->
+                            <div class="col-xs-12 outer_box cds-u-space-mb-xl cds-u-space-mt-sm black-text">
+                                <div class="row cds-u-space-mb-sm">
+
+                                    <div class="col-lg-12 col-xl-12 invoice-logo-container">
+                                        <div class="table-container parent">
+                                            <div class="table-row">
+                                                <!-- Logo image -->
+                                                <div class="table-cell logo-bc">
+
+                                                    <a href="/"><img class="bc-logo logo-us img-fluid print-logo-bc btn-block" src="/wcsstore/CostcoGLOBALSAS/images/Costco_Logo-1.png" alt="Costco US homepage"/></a>
+
+                                                </div>
+                                                <!-- Back link -->
+                                                <div class="table-cell right-cell text-right" >
+                                                    <a id ="back-to-order-detail" class="t6-style-link" href="https://www.costco.com/OrderStatusDetailsView?orderId=1020042473">Back to Order Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row cds-u-space-mb-sm">
+                                    <div class="col-lg-12 col-xl-12 ">
+                                        <div class="table-container parent">
+                                            <div class="table-row">
+                                                <h1 class="table-cell t1-style black-text">
+                                                    Order Details
+                                                </h1>
+                                                <div class="table-cell right-cell text-right valign-cell-bottom">
+                                                    <a id="print-invoice-link" href="#" class="print-link pull-right">Print Invoice</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12 col-xl-12 col-lg-12 col-sm-12 table_top_padding">
+                                        <div class="details_box cds-u-space-pt-sm cds-u-space-pb-sm">
+                                            <div class="col-md-3 col-sm-3 col-lg-3 col-xl-3 outer_box invoice">
+                                                <!-- Show Order Id -->
+                                                <div class="t6-style-bold black-text">
+                                                    Order Number
+                                                </div>
+                                                <div class="t6-style cds-u-space-mb-sm black-text">
+                                                    1020042473
+                                                </div>
+                                                <!-- Show Order Date -->
+                                                <div class="t6-style-bold black-text">
+                                                    Order Date
+                                                </div>
+                                                <div class="t6-style cds-u-space-mb-sm black-text">
+                                                    03/23/2023
+                                                </div>
+                                                <!-- Show Membership number -->
+                                                <div class="t6-style-bold black-text">
+                                                    Membership Number
+                                                </div>
+                                                <div class="t6-style cds-u-space-mb-sm black-text">
+                                                    111799376907
+                                                </div>
+                                            </div>
+                                            <!-- Show Order amount -->
+                                            <div class="col-md-3 col-sm-3 col-lg-3 col-xl-3  outer_box invoice">
+                                                <!-- Include the payment card details --><!-- Begin OrderDetailsPrintPaymentHeader_UI_BC.jspf -->
+
+                                                <div class="t6-style-bold black-text">
+                                                    Payment Method
+                                                </div>
+                                                <div id="creditcard" class="display no-separation">
+                                                    <!-- Loop through each payment and show the details --><!-- Display the payment type image --><!-- display card details -->
+                                                    <div class="cds-u-space-mb-sm" >
+                                                        <div class="cds-u-space-mr-xs pull-left">
+                                                            <img class="card-img-print-sm" src="/wcsstore/CostcoGLOBALSAS/images/payment-mc.png" alt="Mastercard"/>
+                                                        </div>
+                                                        <div class="card-information body-copy-cozy">
+
+                                                            <span class="t6-style black-text">Mastercard</span>
+                                                            ending in
+                                                            <span class="t6-style-bold black-text">7105</span>
+
+                                                            <div class="t6-style black-text">
+                                                                Expires&nbsp;
+                                                                <span class="t6-style-bold black-text">05/27</span>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <!-- Display the payment type image --><!-- Display the payment type image --><!-- Display the payment type image --><!-- Display the payment type image --><!-- Display the payment type image -->
+                                                </div>
+                                                <!-- End OrderDetailsPrintPaymentHeader_UI_BC.jspf -->
+                                            </div>
+                                            <!-- Show Shipping Address -->
+                                            <div class="col-md-3 col-sm-3 col-lg-3 col-xl-3 ">
+
+
+                                                <div>
+                                                    <div class="t6-style-bold black-text">
+                                                        Shipping Address
+                                                    </div>
+                                                    <div class="t6-style black-text">
+                                                        Irina&nbsp;Ignatenko
+                                                    </div>
+
+                                                    <div class="t6-style black-text">
+                                                        7564 Lincoln Ave
+                                                    </div>
+
+
+
+                                                    <div class="t6-style black-text">
+                                                        Skokie, IL
+                                                    </div>
+
+                                                    <div class="t6-style black-text">
+                                                        60077-3335
+                                                    </div>
+
+
+                                                    <div class="t6-style black-text">
+                                                        8473291238
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <!-- Include the billing address details -->
+                                            <div class="col-md-3 col-sm-3 col-lg-3 col-xl-3  outer_box invoice">
+
+
+                                                <div>
+                                                    <div class="t6-style-bold black-text">
+                                                        Billing Address
+                                                    </div>
+                                                    <div class="t6-style black-text">
+                                                        Larisa&nbsp;Turgel
+                                                    </div>
+
+                                                    <div class="t6-style black-text">
+                                                        21713 MARIGOT DR
+                                                    </div>
+
+
+
+                                                    <div class="t6-style black-text">
+                                                        BOCA RATON, FL
+                                                    </div>
+
+                                                    <div class="t6-style black-text">
+                                                        33428-4825
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- End OrderDetailsInvoicePageHeader_UI_BC.jspf --><!-- Begin OrderDetailsInvoicePrintItemDetail_UI_BC.jspf -->
+                            <div class="col-xs-12 outer_box cds-u-space-mb-xl">
+                                <!-- Item detail heading -->
+                                <div class="row cds-u-space-mb-xxs">
+                                    <div class="col-xs-4 text-left">
+                                        <span class="t6-style-bold black-text">Item</span>
+                                    </div>
+                                    <div class="col-xs-2 text-center"></div>
+                                    <div class="col-xs-2 text-center">
+                                        <span class="t6-style-bold black-text">Quantity</span>
+                                    </div>
+                                    <div class="col-xs-2 text-center">
+                                        <span class="t6-style-bold black-text">Status</span>
+                                    </div>
+                                    <div class="col-xs-2 text-center">
+                                        <span class="t6-style-bold black-text">Total Price</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-xxs"></div></div>
+                                </div>
+
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Q-tips Cotton Swabs 1875 Count
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #825400
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $11.49
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        5
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Shipped
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $57.45
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Celadrin® Advanced Joint Health Cream, 12 Ounces
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #800385
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $23.99
+                                        </div>
+
+                                        <div class="t6-style-success cds-u-space-mb-xxs">
+                                            Discount  $28.00
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        4
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Shipped
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $95.96
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Reynolds Wrap Aluminum Foil, 12 in x 83.33 yds, 2-count
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #720
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $25.49
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        6
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Shipped
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $152.94
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Ferrero Rocher Fine Hazelnut Chocolates, 21.2 oz, 48ct
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #521658
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $17.99
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        10
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Shipped
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $179.90
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Lavazza Caffé Espresso 100% Premium Arabica Coffee, Whole Bean, 2.2 lbs
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #437484
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $17.99
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        4
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Shipped
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $71.96
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Kirkland Signature Plastic Food Wrap, 12 in x 750 ft, 2-count
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #26757
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $15.79
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        1
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Shipped
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $15.79
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Pantene Essential Botanicals Moisturizing Shampoo, Apricot &amp; Shea Butter, 38.2 fl oz
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #1715700
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $16.99
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        4
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Shipped
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $67.96
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Mon Chateau Anti-fatigue Comfort Gel Mat, Grey
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #1712206
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $29.99
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        2
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Delivery Delayed
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $59.98
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Mon Chateau Anti-fatigue Comfort Gel Mat, Black
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #1712205
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $29.99
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        2
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Delivery Delayed
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $59.98
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Kitao Matcha Facial Cream Duo, 1.7 fl oz
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #1690983
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $29.97
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        4
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Delivery Delayed
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $119.88
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Tramontina 9-piece Non-Stick Cookware Set
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #1676547
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $99.99
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        2
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Shipped
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $199.98
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            SheaMoisture Natural Infusions Moisture Boosting Shampoo, 34 fl oz
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #1676013
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $17.99
+                                        </div>
+
+                                        <div class="t6-style-success cds-u-space-mb-xxs">
+                                            Discount  $24.00
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        4
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Shipped
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $71.96
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Prism Bath Rug With Latex Backing, 24” x 36”, Green
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #1641598
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $19.97
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        4
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Shipped
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $79.88
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Signature 6-piece Stoneware Bowl Set with Vented Lids
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #1630829
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $21.99
+                                        </div>
+
+                                        <div class="t6-style-success cds-u-space-mb-xxs">
+                                            Discount  $12.00
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        4
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Delivery Delayed
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $87.96
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Embryolisse Lait Creme Concentre Daily Face and Body Cream 2.54 fl oz, 2-pack
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #1594818
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $38.99
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        2
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Shipped
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $77.98
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            WELEDA Skin Food Original Ultra-Rich Cream 2.5 oz, 3-pack
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #1389981
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $44.99
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        4
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Shipped
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $179.96
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            J.A. Henckels International 3-piece Cutting Board Set, Multi
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #1301391
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $26.99
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        4
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Order Received
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $107.96
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            J.A. Henckels International 3-piece Cutting Board Set, Gray
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #1301379
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $26.99
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        4
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Order Received
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $107.96
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Nescafé Taster&#039;s Choice Instant Coffee, House Blend, 14 oz
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #1244454
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $19.99
+                                        </div>
+
+                                        <div class="t6-style-success cds-u-space-mb-xxs">
+                                            Discount  $25.00
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        5
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Shipped
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $99.95
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            San Francisco French Roast Whole Bean Coffee 3 lb, 2-pack
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #1098446
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $44.99
+                                        </div>
+
+                                        <div class="t6-style-success cds-u-space-mb-xxs">
+                                            Discount  $60.00
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        6
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Shipped
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $269.94
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                                <div class="row invoice-item-detail-box cds-u-space-pt-lg no-page-break">
+
+                                    <div class="col-xs-4 text-left">
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            ProKeeper 6-piece Bakers Storage Set
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            Item #1016531
+                                        </div>
+                                        <div class="t6-style black-text cds-u-space-mb-xxs">
+                                            $39.99
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        2
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        Delivery Delayed
+                                    </div>
+                                    <div class="col-xs-2 text-center t6-style black-text">
+                                        $79.98
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12"><div class="liner cds-u-space-mt-md"></div></div>
+                                </div>
+
+                            </div>
+                            <!-- End OrderDetailsInvoicePrintItemDetail_UI_BC.jspf --><!-- Begin OrderDetailsInvoicePrintSummary_UI_BC.jspf -->
+                            <div class="col-xs-12 no-page-break">
+                                <div class="row">
+                                    <div class="col-lg-8 col-md-6 col-sm-6 col-xs-6">&nbsp;</div>
+                                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                                        <div class="row">
+                                            <div class="col-xs-12 cds-u-space-mb-sm">
+					<span class="t2-style black-text">Order Summary
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <div class="summary-print-box-bordered cds-u-space-pl-md cds-u-space-pr-md cds-u-space-pt-md cds-u-space-pb-md">
+                                                    <!-- Subtotal section -->
+                                                    <div class="row cds-u-space-mb-md">
+                                                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+								<span class="t5-style black-text">
+									Subtotal
+									(83 Items)
+								</span>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+								<span class="t5-style black-text pull-right">
+									$2,245.31
+								</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Shipping section -->
+                                                    <div class="row cds-u-space-mb-md">
+                                                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+								<span class="t6-style black-text">
+									Shipping
+								</span>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+								<span class="t6-style black-text pull-right">
+									$16.00
+								</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Grocery Surcharge section -->
+                                                    <div class="row ">
+                                                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+								<span class="t6-style black-text">
+									2-Day Delivery Fee
+								</span>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+								<span class="t6-style black-text pull-right">
+									$0.00
+								</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Frozen Surcharge section --><!-- Tax section -->
+                                                    <div class="row">
+                                                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+										<span class="t6-style black-text">
+											Estimated Tax
+										</span>
+
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+										<span class="t6-style black-text pull-right">
+											$106.15
+										</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-xs-12 cds-u-space-mt-md">
+											<span class="t6-style black-text">
+												<!-- BEGIN ContentAreaESpot.jsp --><!-- BEGIN ContentAreaESpot.jsp estimated-tax-espot -->
+
+
+
+
+<div class="genericESpot" id="WC_ContentAreaESpot_div_1_estimated-tax-espot">
+	<div class="caption" style="display:none" id="WC_ContentAreaESpot_div_2_estimated-tax-espot">[estimated-tax-espot]</div>
+
+		<div class="featureAllItems">
+			<ul class="featureItemsTable" automation-id="allFeatureItems">
+
+
+					<li value="1">
+					<!-- Stores\WebContent\CostcoGLOBALSAS\Snippets\Marketing\ESpot\RenderESpotContent.jspf -->Sales tax on checkout is an estimate. The tax charged is determined when the order is shipped or picked up.
+					</li>
+
+			</ul>
+		</div>
+
+</div>
+
+                                                <!-- END ContentAreaESpot.jsp -->
+											</span>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <div class="liner cds-u-space-mt-md cds-u-space-mb-md"></div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                    <!-- Order total section -->
+                                                    <div class="row">
+                                                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+								<span class="t5-style black-text">
+									Order Total
+								</span>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+								<span class="t5-style black-text pull-right">
+									$2,218.46
+								</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End OrderDetailsInvoicePrintSummary_UI_BC.jspf -->
+
+                            <div class="col-xs-12 outer_box" id="invoice-espot">
+                                <div class="espot espot-968" style="margin-top:1em;">
+                                    <!-- BEGIN ContentAreaESpot.jsp --><!-- BEGIN ContentAreaESpot.jsp Checkout_1 -->
+
+
+
+
+                                    <div class="genericESpot" id="WC_ContentAreaESpot_div_1_Checkout_1">
+                                        <div class="caption" style="display:none" id="WC_ContentAreaESpot_div_2_Checkout_1">[Checkout_1]</div>
+
+                                        <div class="featureAllItems">
+                                            <ul class="featureItemsTable" automation-id="allFeatureItems">
+
+
+                                                <li value="1">
+                                                    <!-- Stores\WebContent\CostcoGLOBALSAS\Snippets\Marketing\ESpot\RenderESpotContent.jspf --><a href="https://costconext.com/">
+                                                    <img class="img-responsive hidden-xs hidden-sm" src="https://mobilecontent.costco.com/live/resource/img/23w04025-costco-next-large-banner/d-23w04025-costco-next-large-banner.jpg" alt="Costco NEXT. Buy direct from select brands at a Costco price.">
+                                                    <img class="img-responsive hidden-md hidden-lg hidden-xl" src="https://mobilecontent.costco.com/live/resource/img/23w04025-costco-next-large-banner/m-23w04025-costco-next-large-banner.jpg" alt="Costco NEXT. Buy direct from select brands at a Costco price.">
+                                                </a>
+                                                    <div style="padding-bottom:9px"></div>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- END ContentAreaESpot.jsp -->
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <!-- End OrderDetails.jspf -->
+                    <script id='tmpl_fsa_modal' type="html/template">
+
+                        <div>
+                            <p>
+                                <span class="bold">Why is this item marked as FSA Eligible?</span><br>This item is marked with the following icon as FSA eligible to identify that it MAY be purchased using a Flexible Spending Account (FSA):
+                            </p>
+                            <span class="fsa-link">FSA Eligible Item</span>
+                            <p>
+                                <span class="bold">What is a Flexible Spending Account (FSA)?</span><br>A FSA (Flexible Spending Account) allows use of the funds an individual has designated to be set aside pre-tax for medical expenses, typically with their employer, when selecting healthcare programs during the previous year.
+                            </p>
+                            <p>
+                                <span class="bold">What types of purchases are FSA eligible?</span><br>Over-the-counter medical supplies and equipment are considered reimbursable by an FSA account in 2011 and include the following categories:
+                            </p>
+                            <ul>
+                                <li>Contact lens solution</li>
+                                <li>Prescription contact lenses with correction only</li>
+                                <li>Diagnostic devices (i.e. blood pressure and blood glucose monitors)</li>
+                                <li>Durable medical equipment and goods</li>
+                                <li>Insulin</li>
+                                <li>Prescription medications</li>
+                            </ul>
+                            <p>
+                                <span class="bold italic">Note:</span> Although the IRS sets guidelines for FSA programs, <span class="italic">individual employers have the final determination of which expenses are covered by their FSA programs.</span>
+                            </p>
+                        </div>
+
+                    </script>
+
+                    <script id='tmpl_fsa_modal_v2' type="html/template">
+
+                        <div id="fsa-eligible-details">
+                            <p>
+                                <span class="bold">Why is this item marked as FSA Eligible?</span><br>This item is marked with the following icon as FSA eligible to identify that it MAY be purchased using a Flexible Spending Account (FSA):
+                            </p>
+                            <span class="fsa-link">FSA Eligible Item</span>
+                            <p>
+                                <span class="bold">What is a Flexible Spending Account (FSA)?</span><br>A FSA (Flexible Spending Account) allows use of the funds an individual has designated to be set aside pre-tax for medical expenses, typically with their employer, when selecting healthcare programs during the previous year.
+                            </p>
+                            <p>
+                                <span class="bold">What types of purchases are FSA eligible?</span><br>Over-the-counter medical supplies and equipment are considered reimbursable by an FSA account in 2011 and include the following categories:
+                            </p>
+                            <ul>
+                                <li>Contact lens solution</li>
+                                <li>Prescription contact lenses with correction only</li>
+                                <li>Diagnostic devices (i.e. blood pressure and blood glucose monitors)</li>
+                                <li>Durable medical equipment and goods</li>
+                                <li>Insulin</li>
+                                <li>Prescription medications</li>
+                            </ul>
+                            <p>
+                                <span class="bold italic">Note:</span> Although the IRS sets guidelines for FSA programs, <span class="italic">individual employers have the final determination of which expenses are covered by their FSA programs.</span>
+                            </p>
+                        </div>
+
+                    </script>
+                    <script id='tmpl_fsa_footer_modal_v2' type="html/template">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <button type="button" id="costcoModalBtn2" class="btn btn-primary btn-block" data-dismiss="modal" automation-id="confirmationButton"><label class="hide">Primary</label></button>
+                            </div>
+                        </div>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Footer --><!-- Modal Widget--><!-- Modal -->
+<div class="modal fade" id="costcoModal" tabindex="-1" style="display: none;" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" automation-id="closeModalButton" data-dismiss="modal" aria-label='Close'><span class="co-close" aria-hidden="true"></span></button>
+                <h2 class="modal-title" id="costcoModalTitle" automation-id="modalTitle"><label class="hide">title</label></h2><!-- Title -->
+            </div>
+            <div class="modal-body single-page-checkout" id="costcoModalText">
+                <!-- body -->
+
+            </div>
+            <div class="modal-footer single-page-checkout">
+                <div class="row">
+                    <div class="col-lg-6 visible-lg visible-xl">
+                        <button type="button" id="costcoModalBtn1" class="costcoModalBtn1 btn secondary-button-v2 btn-block" automation-id="cancelButton"><label class="hide">Cancel</label></button> <!-- Cancel -->
+                    </div>
+                    <div class="col-xs-12 col-lg-6">
+                        <button type="button" id="costcoModalBtn2" class="btn primary-button-v2 btn-block" automation-id="saveButton"><label class="hide">Primary</label></button> <!-- Primary Button -->
+                    </div>
+                    <div class="col-xs-12 visible-xs visible-sm visible-md">
+                        <button type="button" class="costcoModalBtn1 btn secondary-button-v2 btn-block"><label class="hide">Cancel</label></button> <!-- Cancel -->
+                    </div>
+                </div>
+                <div id="costcoModalFooterText" class="hide">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript"  src="/OgDaAfwqWqI-H/3Sot/bwAH_2KD9g/1tiXwmQVauES/JhFjQxRXaw/XD5lI2/c6SCE"></script></body>
+</html>
